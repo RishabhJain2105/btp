@@ -1,0 +1,3 @@
+sudo kubectl -n loadbalancer exec -ti lb-0 bash
+
+sudo kubectl -n ran-simulator1 exec -ti deploy/sim5g-simulator bash

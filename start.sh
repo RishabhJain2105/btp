@@ -394,183 +394,183 @@ sudo helm -n ran-simulator89 upgrade --install sim5g my5GRanTester89-helm-chart/
 
 sudo helm -n ran-simulator90 upgrade --install sim5g my5GRanTester90-helm-chart/
 
-sudo kubectl -n ran-simulator1 get po
+# sudo kubectl -n ran-simulator1 get po
 
-sudo kubectl -n ran-simulator2 get po
+# sudo kubectl -n ran-simulator2 get po
 
-sudo kubectl -n ran-simulator3 get po
+# sudo kubectl -n ran-simulator3 get po
 
-sudo kubectl -n ran-simulator4 get po
+# sudo kubectl -n ran-simulator4 get po
 
-sudo kubectl -n ran-simulator5 get po
+# sudo kubectl -n ran-simulator5 get po
 
-sudo kubectl -n ran-simulator6 get po
+# sudo kubectl -n ran-simulator6 get po
 
-sudo kubectl -n ran-simulator7 get po
+# sudo kubectl -n ran-simulator7 get po
 
-sudo kubectl -n ran-simulator8 get po
+# sudo kubectl -n ran-simulator8 get po
 
-sudo kubectl -n ran-simulator9 get po
+# sudo kubectl -n ran-simulator9 get po
 
-sudo kubectl -n ran-simulator10 get po
+# sudo kubectl -n ran-simulator10 get po
 
-sudo kubectl -n ran-simulator11 get po
+# sudo kubectl -n ran-simulator11 get po
 
-sudo kubectl -n ran-simulator12 get po
+# sudo kubectl -n ran-simulator12 get po
 
-sudo kubectl -n ran-simulator13 get po
+# sudo kubectl -n ran-simulator13 get po
 
-sudo kubectl -n ran-simulator14 get po
+# sudo kubectl -n ran-simulator14 get po
 
-sudo kubectl -n ran-simulator15 get po
+# sudo kubectl -n ran-simulator15 get po
 
-sudo kubectl -n ran-simulator16 get po
+# sudo kubectl -n ran-simulator16 get po
 
-sudo kubectl -n ran-simulator17 get po
+# sudo kubectl -n ran-simulator17 get po
 
-sudo kubectl -n ran-simulator18 get po
+# sudo kubectl -n ran-simulator18 get po
 
-sudo kubectl -n ran-simulator19 get po
+# sudo kubectl -n ran-simulator19 get po
 
-sudo kubectl -n ran-simulator20 get po
+# sudo kubectl -n ran-simulator20 get po
 
-sudo kubectl -n ran-simulator21 get po
+# sudo kubectl -n ran-simulator21 get po
 
-sudo kubectl -n ran-simulator22 get po
+# sudo kubectl -n ran-simulator22 get po
 
-sudo kubectl -n ran-simulator23 get po
+# sudo kubectl -n ran-simulator23 get po
 
-sudo kubectl -n ran-simulator24 get po
+# sudo kubectl -n ran-simulator24 get po
 
-sudo kubectl -n ran-simulator25 get po
+# sudo kubectl -n ran-simulator25 get po
 
-sudo kubectl -n ran-simulator26 get po
+# sudo kubectl -n ran-simulator26 get po
 
-sudo kubectl -n ran-simulator27 get po
+# sudo kubectl -n ran-simulator27 get po
 
-sudo kubectl -n ran-simulator28 get po
+# sudo kubectl -n ran-simulator28 get po
 
-sudo kubectl -n ran-simulator29 get po
+# sudo kubectl -n ran-simulator29 get po
 
-sudo kubectl -n ran-simulator30 get po
+# sudo kubectl -n ran-simulator30 get po
 
-sudo kubectl -n ran-simulator31 get po
+# sudo kubectl -n ran-simulator31 get po
 
-sudo kubectl -n ran-simulator32 get po
+# sudo kubectl -n ran-simulator32 get po
 
-sudo kubectl -n ran-simulator33 get po
+# sudo kubectl -n ran-simulator33 get po
 
-sudo kubectl -n ran-simulator34 get po
+# sudo kubectl -n ran-simulator34 get po
 
-sudo kubectl -n ran-simulator35 get po
+# sudo kubectl -n ran-simulator35 get po
 
-sudo kubectl -n ran-simulator36 get po
+# sudo kubectl -n ran-simulator36 get po
 
-sudo kubectl -n ran-simulator37 get po
+# sudo kubectl -n ran-simulator37 get po
 
-sudo kubectl -n ran-simulator38 get po
+# sudo kubectl -n ran-simulator38 get po
 
-sudo kubectl -n ran-simulator39 get po
+# sudo kubectl -n ran-simulator39 get po
 
-sudo kubectl -n ran-simulator40 get po
+# sudo kubectl -n ran-simulator40 get po
 
-sudo kubectl -n ran-simulator41 get po
+# sudo kubectl -n ran-simulator41 get po
 
-sudo kubectl -n ran-simulator42 get po
+# sudo kubectl -n ran-simulator42 get po
 
-sudo kubectl -n ran-simulator43 get po
+# sudo kubectl -n ran-simulator43 get po
 
-sudo kubectl -n ran-simulator44 get po
+# sudo kubectl -n ran-simulator44 get po
 
-sudo kubectl -n ran-simulator45 get po
+# sudo kubectl -n ran-simulator45 get po
 
-sudo kubectl -n ran-simulator46 get po
+# sudo kubectl -n ran-simulator46 get po
 
-sudo kubectl -n ran-simulator47 get po
+# sudo kubectl -n ran-simulator47 get po
 
-sudo kubectl -n ran-simulator48 get po
+# sudo kubectl -n ran-simulator48 get po
 
-sudo kubectl -n ran-simulator49 get po
+# sudo kubectl -n ran-simulator49 get po
 
-sudo kubectl -n ran-simulator50 get po
+# sudo kubectl -n ran-simulator50 get po
 
-sudo kubectl -n ran-simulator51 get po
+# sudo kubectl -n ran-simulator51 get po
 
-sudo kubectl -n ran-simulator52 get po
+# sudo kubectl -n ran-simulator52 get po
 
-sudo kubectl -n ran-simulator53 get po
+# sudo kubectl -n ran-simulator53 get po
 
-sudo kubectl -n ran-simulator54 get po
+# sudo kubectl -n ran-simulator54 get po
 
-sudo kubectl -n ran-simulator55 get po
+# sudo kubectl -n ran-simulator55 get po
 
-sudo kubectl -n ran-simulator56 get po
+# sudo kubectl -n ran-simulator56 get po
 
-sudo kubectl -n ran-simulator57 get po
+# sudo kubectl -n ran-simulator57 get po
 
-sudo kubectl -n ran-simulator58 get po
+# sudo kubectl -n ran-simulator58 get po
 
-sudo kubectl -n ran-simulator59 get po
+# sudo kubectl -n ran-simulator59 get po
 
-sudo kubectl -n ran-simulator60 get po
+# sudo kubectl -n ran-simulator60 get po
 
-sudo kubectl -n ran-simulator61 get po
+# sudo kubectl -n ran-simulator61 get po
 
-sudo kubectl -n ran-simulator62 get po
+# sudo kubectl -n ran-simulator62 get po
 
-sudo kubectl -n ran-simulator63 get po
+# sudo kubectl -n ran-simulator63 get po
 
-sudo kubectl -n ran-simulator64 get po
+# sudo kubectl -n ran-simulator64 get po
 
-sudo kubectl -n ran-simulator65 get po
+# sudo kubectl -n ran-simulator65 get po
 
-sudo kubectl -n ran-simulator66 get po
+# sudo kubectl -n ran-simulator66 get po
 
-sudo kubectl -n ran-simulator67 get po
+# sudo kubectl -n ran-simulator67 get po
 
-sudo kubectl -n ran-simulator68 get po
+# sudo kubectl -n ran-simulator68 get po
 
-sudo kubectl -n ran-simulator69 get po
+# sudo kubectl -n ran-simulator69 get po
 
-sudo kubectl -n ran-simulator70 get po
+# sudo kubectl -n ran-simulator70 get po
 
-sudo kubectl -n ran-simulator71 get po
+# sudo kubectl -n ran-simulator71 get po
 
-sudo kubectl -n ran-simulator72 get po
+# sudo kubectl -n ran-simulator72 get po
 
-sudo kubectl -n ran-simulator73 get po
+# sudo kubectl -n ran-simulator73 get po
 
-sudo kubectl -n ran-simulator74 get po
+# sudo kubectl -n ran-simulator74 get po
 
-sudo kubectl -n ran-simulator75 get po
+# sudo kubectl -n ran-simulator75 get po
 
-sudo kubectl -n ran-simulator76 get po
+# sudo kubectl -n ran-simulator76 get po
 
-sudo kubectl -n ran-simulator77 get po
+# sudo kubectl -n ran-simulator77 get po
 
-sudo kubectl -n ran-simulator78 get po
+# sudo kubectl -n ran-simulator78 get po
 
-sudo kubectl -n ran-simulator79 get po
+# sudo kubectl -n ran-simulator79 get po
 
-sudo kubectl -n ran-simulator80 get po
+# sudo kubectl -n ran-simulator80 get po
 
-sudo kubectl -n ran-simulator81 get po
+# sudo kubectl -n ran-simulator81 get po
 
-sudo kubectl -n ran-simulator82 get po
+# sudo kubectl -n ran-simulator82 get po
 
-sudo kubectl -n ran-simulator83 get po
+# sudo kubectl -n ran-simulator83 get po
 
-sudo kubectl -n ran-simulator84 get po
+# sudo kubectl -n ran-simulator84 get po
 
-sudo kubectl -n ran-simulator85 get po
+# sudo kubectl -n ran-simulator85 get po
 
-sudo kubectl -n ran-simulator86 get po
+# sudo kubectl -n ran-simulator86 get po
 
-sudo kubectl -n ran-simulator87 get po
+# sudo kubectl -n ran-simulator87 get po
 
-sudo kubectl -n ran-simulator88 get po
+# sudo kubectl -n ran-simulator88 get po
 
-sudo kubectl -n ran-simulator89 get po
+# sudo kubectl -n ran-simulator89 get po
 
-sudo kubectl -n ran-simulator90 get po
+# sudo kubectl -n ran-simulator90 get po
 

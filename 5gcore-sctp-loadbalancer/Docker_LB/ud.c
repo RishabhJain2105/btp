@@ -9,13 +9,53 @@
 #include <sys/time.h>
 #include <signal.h>
 
+
+unsigned amf_load[NUM_AMFS];     // amf_load[i] = current gNB count for AMF with ID (i+1)
+unsigned amf_capacity;           // maximum gNBs an AMF can handle
+
+// List of AMF IDs corresponding to amf_load indices
+static const unsigned amf_ids[NUM_AMFS] = {1, 2, 3};
+
+// Structure for sorting AMFs by load
+typedef struct {
+    unsigned id;
+    unsigned load;
+} amf_entry_t;
+
+// Comparison function for qsort: ascending by load
+static int cmp_amf_entry(const void *a, const void *b) {
+    const amf_entry_t *ea = (const amf_entry_t *)a;
+    const amf_entry_t *eb = (const amf_entry_t *)b;
+    if (ea->load < eb->load) return -1;
+    if (ea->load > eb->load) return 1;
+    return 0;
+}
+
+// Scale an AMF deployment to the specified number of replicas
+static void scale_amf_deployment(unsigned amf_id, unsigned replicas) {
+    char cmd[128];
+    snprintf(cmd, sizeof(cmd),
+             "kubectl -n open5gs scale deployment core5g-amf-%u-deployment --replicas=%u",
+             amf_id, replicas);
+    int ret = system(cmd);
+    if (ret != 0) {
+        fprintf(stderr, "[load_check] failed to scale AMF %u to %u replicas (ret=%d)\n",
+                amf_id, replicas, ret);
+    }
+}
+
+
 #define BUFFER_SIZE 1024
 #define MAX_CONNECTIONS 10
 #define HASH_SPACE_SIZE 90
+#define MAX_SERVERS 3
+
+// unordered_map<unsigned, unsigned> amf_load;
 
 pthread_mutex_t gnb_count_mutex = PTHREAD_MUTEX_INITIALIZER;
 int gnb_count = 0;
 int load = 2;
+pthread_mutex_t load_mutex = PTHREAD_MUTEX_INITIALIZER;
 struct timeval start, end;
 
 FILE *fp, *fp_amf;
@@ -209,6 +249,53 @@ void *handle_gnb_connection(void *arg)
 
     close(gnb_socket);
     close(amf_socket);
+    return NULL;
+}
+
+// Thread function: periodically check loads and downscale if possible
+void* load_check(void *arg) {
+    (void)arg;  // unused
+    e defining a brand‑new array in that file, leading to multiple‐definition errors at link time (or shadowing issues).
+    while (1) {
+        // Copy global loads into local array for sorting
+        amf_entry_t entries[NUM_AMFS];
+        for (int i = 0; i < NUM_AMFS; i++) {
+            entries[i].id   = amf_ids[i];
+            entries[i].load = amf_load[i];
+        }
+
+        // Sort by load ascending
+        qsort(entries, NUM_AMFS, sizeof(amf_entry_t), cmp_amf_entry);
+
+        // Identify lowest and second-lowest
+        unsigned low_id   = entries[0].id;
+        unsigned low_load = entries[0].load;
+        unsigned sec_id   = entries[1].id;
+        unsigned sec_load = entries[1].load;
+
+        // Indices in amf_load[] correspond to id-1
+        unsigned low_idx = low_id - 1;
+        unsigned sec_idx = sec_id - 1;
+
+        // If we can shift all gNBs from the least-loaded AMF into the second one
+        if (low_load > 0 && sec_load + low_load <= amf_capacity) {
+            printf("[load_check] shifting %u gNB(s) from AMF %u → AMF %u\n",
+                   low_load, low_id, sec_id);
+
+            // Scale down the least-loaded AMF
+            scale_amf_deployment(low_id, 0);
+
+            // Update global load counts
+            amf_load[sec_idx] += low_load;
+            amf_load[low_idx] = 0;
+
+            printf("[load_check] AMF %u down-scaled, AMF %u new load=%u\n",
+                   low_id, sec_id, amf_load[sec_idx]);
+        }
+
+        // Sleep before next check
+        sleep(10);
+    }
     return NULL;
 }
 

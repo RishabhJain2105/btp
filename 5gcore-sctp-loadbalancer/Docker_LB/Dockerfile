@@ -20,9 +20,12 @@ RUN curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/s
     install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl && \
     rm kubectl
 
-# Copy the load_balancer.c source file to the container
 
 COPY load_balancer.c /load_balancer.c
+
+COPY consistent_hashing.c /consistent_hashing.c
+
+# COPY ud.c /ud.c
 
 COPY reactive_lb.c /reactive_lb.c
 
@@ -30,6 +33,10 @@ COPY threshold_lb.c /threshold_lb.c
 
 # Compile the load_balancer.c source file with SCTP support
 RUN gcc -o /load_balancer /load_balancer.c -lsctp
+
+RUN gcc -o /consistent_hashing /consistent_hashing.c -lsctp
+
+# RUN gcc -o /ud /ud.c -lsctp
 
 RUN gcc -o /reactive_lb /reactive_lb.c -lsctp
 

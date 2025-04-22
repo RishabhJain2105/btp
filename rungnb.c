@@ -42,7 +42,7 @@ int main(int argc, char *argv[])
         fprintf(fp2,"%d\n",sum);        
 
         snprintf(command, sizeof(command), 
-                 "gnome-terminal --tab -- bash -c 'sudo kubectl -n ran-simulator%d exec deploy/sim5g-simulator -- /root/go/src/my5G-RANTester/cmd/app ue; exec bash'", 
+                 "gnome-terminal --tab -- bash -c 'sudo /usr/local/bin/kubectl -n ran-simulator%d exec deploy/sim5g-simulator -- /root/go/src/my5G-RANTester/cmd/app ue; exec bash'", 
                  i);
         int result = system(command);
         

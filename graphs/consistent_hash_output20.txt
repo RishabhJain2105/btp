@@ -1,0 +1,86 @@
+Proxy listening on IP 10.0.3.1, port 38412
+Consistent hashing ring: AMF1 at position 0, AMF2 at position 30, AMF3 at position 60
+
+gNB 1 connected from IP 10.0.3.10
+gNB IP 10.0.3.10 hashed to position 10
+Connected to AMF 1 in 0.35 ms
+
+gNB 2 connected from IP 10.0.3.13
+gNB IP 10.0.3.13 hashed to position 13
+Connected to AMF 1 in 0.36 ms
+deployment.apps/core5g-amf-2-deployment scaled
+
+gNB 3 connected from IP 10.0.3.16
+gNB IP 10.0.3.16 hashed to position 16
+Connected to AMF 1 in 0.37 ms
+
+gNB 4 connected from IP 10.0.3.17
+gNB IP 10.0.3.17 hashed to position 17
+Connected to AMF 1 in 0.44 ms
+deployment.apps/core5g-amf-3-deployment scaled
+
+gNB 5 connected from IP 10.0.3.18
+gNB IP 10.0.3.18 hashed to position 18
+Connected to AMF 1 in 0.24 ms
+
+gNB 6 connected from IP 10.0.3.23
+gNB IP 10.0.3.23 hashed to position 23
+Connected to AMF 1 in 0.40 ms
+
+gNB 7 connected from IP 10.0.3.24
+gNB IP 10.0.3.24 hashed to position 24
+Connected to AMF 1 in 0.20 ms
+AMF 3 at 10.0.3.5 is back online!
+
+gNB 8 connected from IP 10.0.3.25
+gNB IP 10.0.3.25 hashed to position 25
+Connected to AMF 3 in 0.20 ms
+AMF 2 at 10.0.3.4 is back online!
+
+gNB 9 connected from IP 10.0.3.26
+gNB IP 10.0.3.26 hashed to position 26
+Connected to AMF 2 in 0.15 ms
+
+gNB 10 connected from IP 10.0.3.27
+gNB IP 10.0.3.27 hashed to position 27
+Connected to AMF 2 in 0.21 ms
+
+gNB 11 connected from IP 10.0.3.29
+gNB IP 10.0.3.29 hashed to position 29
+Connected to AMF 2 in 0.08 ms
+
+gNB 12 connected from IP 10.0.3.11
+gNB IP 10.0.3.11 hashed to position 11
+Connected to AMF 2 in 0.25 ms
+
+gNB 13 connected from IP 10.0.3.12
+gNB IP 10.0.3.12 hashed to position 12
+Connected to AMF 2 in 0.07 ms
+
+gNB 14 connected from IP 10.0.3.14
+gNB IP 10.0.3.14 hashed to position 14
+Connected to AMF 2 in 0.21 ms
+
+gNB 15 connected from IP 10.0.3.15
+gNB IP 10.0.3.15 hashed to position 15
+Connected to AMF 2 in 0.12 ms
+
+gNB 16 connected from IP 10.0.3.19
+gNB IP 10.0.3.19 hashed to position 19
+Connected to AMF 2 in 0.13 ms
+
+gNB 17 connected from IP 10.0.3.20
+gNB IP 10.0.3.20 hashed to position 20
+Connected to AMF 2 in 0.09 ms
+
+gNB 18 connected from IP 10.0.3.21
+gNB IP 10.0.3.21 hashed to position 21
+Connected to AMF 2 in 0.19 ms
+
+gNB 19 connected from IP 10.0.3.22
+gNB IP 10.0.3.22 hashed to position 22
+Connected to AMF 2 in 0.19 ms
+
+gNB 20 connected from IP 10.0.3.28
+gNB IP 10.0.3.28 hashed to position 28
+Connected to AMF 2 in 0.18 ms

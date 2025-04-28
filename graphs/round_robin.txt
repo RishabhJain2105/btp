@@ -1,0 +1,94 @@
+Proxy listening on IP 10.0.3.1, port 38412
+
+GNB 1 connected
+
+Connected to AMF 1 in 0.14 ms
+
+GNB 2 connected
+
+Connected to AMF 1 in 0.80 ms
+deployment.apps/core5g-amf-2-deployment scaled
+
+GNB 3 connected
+
+Connected to AMF 2 in 0.20 ms
+
+GNB 4 connected
+
+Connected to AMF 2 in 0.34 ms
+deployment.apps/core5g-amf-3-deployment scaled
+
+GNB 5 connected
+
+Connected to AMF 3 in 0.39 ms
+
+GNB 6 connected
+
+Connected to AMF 3 in 0.31 ms
+
+GNB 7 connected
+
+Connected to AMF 1 in 0.38 ms
+
+GNB 2 connected
+
+Connected to AMF 1 in 0.30 ms
+deployment.apps/core5g-amf-2-deployment scaled
+
+GNB 3 connected
+
+Connected to AMF 2 in 0.12 ms
+
+GNB 4 connected
+
+Connected to AMF 2 in 0.19 ms
+deployment.apps/core5g-amf-3-deployment scaled
+
+GNB 5 connected
+
+Connected to AMF 3 in 0.16 ms
+
+GNB 6 connected
+
+Connected to AMF 3 in 0.14 ms
+
+GNB 7 connected
+
+Connected to AMF 1 in 0.21 ms
+
+GNB 2 connected
+
+Connected to AMF 1 in 0.13 ms
+deployment.apps/core5g-amf-2-deployment scaled
+
+GNB 3 connected
+
+Connected to AMF 2 in 0.37 ms
+
+GNB 4 connected
+
+Connected to AMF 2 in 0.44 ms
+deployment.apps/core5g-amf-3-deployment scaled
+
+GNB 5 connected
+
+Connected to AMF 3 in 0.16 ms
+
+GNB 6 connected
+
+Connected to AMF 3 in 0.15 ms
+
+GNB 7 connected
+
+Connected to AMF 1 in 0.34 ms
+
+GNB 2 connected
+
+Connected to AMF 1 in 0.25 ms
+deployment.apps/core5g-amf-2-deployment scaled
+
+GNB 3 connected
+
+Connected to AMF 2 in 0.23 ms
+
+

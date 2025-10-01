@@ -128,6 +128,7 @@ void *handle_gnb_connection(void *arg) {
     printf("[forward] handle_gnb_connection: Handling new gNB socket %d\n", gnb_socket);
     AMF *target_amf = get_next_amf_round_robin();
     int amf_sock;
+
     do {
         if (!target_amf) {
             printf("[forward] handle_gnb_connection: No active AMF available, closing gNB socket %d\n", gnb_socket);
@@ -141,16 +142,15 @@ void *handle_gnb_connection(void *arg) {
         pthread_mutex_lock(&amf_state_mutex);
         pthread_mutex_lock(&target_amf->lock);
 
-        int amf_sock = connect_to_amf(target_amf);
+        amf_sock = connect_to_amf(target_amf);
         if (amf_sock < 0) {
-            printf("[forward] handle_gnb_connection: Failed to connect to AMF id=%d ip=%s\n", target_amf->id, target_amf->ip);
+            printf("[forward] handle_gnb_connection: Failed to connect to AMF id=%d ip=%s\n",
+                   target_amf->id, target_amf->ip);
             pthread_mutex_unlock(&target_amf->lock);
             pthread_mutex_unlock(&amf_state_mutex);
-            // close(gnb_socket);
-            // return NULL;
         }
     } while (amf_sock < 0);
-    
+
     target_amf->connections++;
     extern int total_conn_count;
     total_conn_count++;
@@ -160,10 +160,10 @@ void *handle_gnb_connection(void *arg) {
     pthread_mutex_unlock(&target_amf->lock);
     pthread_mutex_unlock(&amf_state_mutex);
 
-    // Allocate structures for forwarding thread
+    // --- GNB -> AMF thread ---
     forward_info_t *gnb_to_amf = malloc(sizeof(forward_info_t));
     if (!gnb_to_amf) {
-        printf("[forward] handle_gnb_connection: Memory allocation failed for forward_info_t\n");
+        printf("[forward] handle_gnb_connection: Memory allocation failed for gnb_to_amf\n");
         close(gnb_socket);
         close(amf_sock);
         return NULL;
@@ -172,27 +172,60 @@ void *handle_gnb_connection(void *arg) {
     gnb_to_amf->source_socket = gnb_socket;
     gnb_to_amf->destination_socket = malloc(sizeof(int));
     *(gnb_to_amf->destination_socket) = amf_sock;
-    gnb_to_amf->current_amf = malloc(sizeof(AMF *));
+    gnb_to_amf->current_amf = (AMF **)malloc(sizeof(AMF *));
     *(gnb_to_amf->current_amf) = target_amf;
     gnb_to_amf->is_active = 1;
     gnb_to_amf->live_thread_index = -1;
 
-    int slot = forward_register_thread(gnb_to_amf);
-    if (slot == -1) {
+    int slot_g2a = forward_register_thread(gnb_to_amf);
+    if (slot_g2a == -1) {
         fprintf(stderr, "[forward] handle_gnb_connection: Max connections reached. Cannot handle new connection.\n");
         cleanup_forward_info(gnb_to_amf);
         return NULL;
     }
 
-    pthread_t thread;
-    if (pthread_create(&thread, NULL, forward_messages, gnb_to_amf) != 0) {
-        perror("[forward] handle_gnb_connection: pthread_create error");
-        forward_unregister_index(slot);
+    pthread_t thread_g2a;
+    if (pthread_create(&thread_g2a, NULL, forward_messages, gnb_to_amf) != 0) {
+        perror("[forward] handle_gnb_connection: pthread_create error (GNB->AMF)");
+        forward_unregister_index(slot_g2a);
         cleanup_forward_info(gnb_to_amf);
         return NULL;
     }
-    pthread_detach(thread);
+    pthread_detach(thread_g2a);
+    printf("[forward] handle_gnb_connection: GNB->AMF forwarding thread started at index %d\n", slot_g2a);
 
-    printf("[forward] handle_gnb_connection: Forwarding thread started at index %d\n", slot);
+    // --- AMF -> GNB thread ---
+    forward_info_t *amf_to_gnb = malloc(sizeof(forward_info_t));
+    if (!amf_to_gnb) {
+        printf("[forward] handle_gnb_connection: Memory allocation failed for amf_to_gnb\n");
+        return NULL;
+    }
+
+    amf_to_gnb->source_socket = amf_sock;
+    amf_to_gnb->destination_socket = malloc(sizeof(int));
+    *(amf_to_gnb->destination_socket) = gnb_socket;
+    amf_to_gnb->current_amf = (AMF **)malloc(sizeof(AMF *));
+    *(amf_to_gnb->current_amf) = target_amf;
+    amf_to_gnb->is_active = 1;
+    amf_to_gnb->live_thread_index = -1;
+
+    int slot_a2g = forward_register_thread(amf_to_gnb);
+    if (slot_a2g == -1) {
+        fprintf(stderr, "[forward] handle_gnb_connection: Max connections reached. Cannot handle AMF->GNB thread.\n");
+        cleanup_forward_info(amf_to_gnb);
+        return NULL;
+    }
+
+    pthread_t thread_a2g;
+    if (pthread_create(&thread_a2g, NULL, forward_messages, amf_to_gnb) != 0) {
+        perror("[forward] handle_gnb_connection: pthread_create error (AMF->GNB)");
+        forward_unregister_index(slot_a2g);
+        cleanup_forward_info(amf_to_gnb);
+        return NULL;
+    }
+    pthread_detach(thread_a2g);
+    printf("[forward] handle_gnb_connection: AMF->GNB forwarding thread started at index %d\n", slot_a2g);
+
     return NULL;
 }
+

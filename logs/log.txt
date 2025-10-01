@@ -1,0 +1,304 @@
+[main] Initializing AMF and forwarding tables...
+[forward] forward_init_table: Initializing live thread table
+[main] Binding socket to 10.0.3.1:38412
+[main] Setting up socket for listening (100 max connections)...
+[main] Proxy listening on 10.0.3.1:38412 with AMF capacity 10
+[amf] get_active_amf_count: Active AMF count = 1
+[scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[amf] get_active_amf_count: Active AMF count = 1
+[scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[main] Accepted new GNB connection from 10.0.3.10:9487
+[amf] get_active_amf_count: Active AMF count = 1
+[scale] scale_up_check: total_conn_count=0, threshold=9
+[scale] scale_up_check: Load below threshold, no scaling up needed
+[main] Scale up check completed.
+[forward] handle_gnb_connection: Handling new gNB socket 4
+[amf] get_next_amf_round_robin: Choosing next active AMF using round robin
+[amf] get_active_amf_count: Active AMF count = 1
+[amf] get_next_amf_round_robin: Selected AMF index 0 (id=1, ip=10.0.3.3)
+[amf] connect_to_amf: Connecting to AMF id=1 ip=10.0.3.3 port=38412
+[amf] connect_to_amf: Successfully connected to 10.0.3.3:38412 (sock=6)
+[forward] handle_gnb_connection: Connected to AMF id=1, incremented connections to 1; total_conn_count=1
+[forward] forward_register_thread: Registered thread at slot 0
+[forward] handle_gnb_connection: Forwarding thread started at index 0
+[forward] forward_messages: Started forwarding messages (thread index 0)
+[main] Accepted new GNB connection from 10.0.3.11:9487
+[amf] get_active_amf_count: Active AMF count = 1
+[scale] scale_up_check: total_conn_count=1, threshold=9
+[scale] scale_up_check: Load below threshold, no scaling up needed
+[main] Scale up check completed.
+[forward] handle_gnb_connection: Handling new gNB socket 5
+[amf] get_next_amf_round_robin: Choosing next active AMF using round robin
+[amf] get_active_amf_count: Active AMF count = 1
+[amf] get_next_amf_round_robin: Selected AMF index 0 (id=1, ip=10.0.3.3)
+[amf] connect_to_amf: Connecting to AMF id=1 ip=10.0.3.3 port=38412
+[amf] connect_to_amf: Successfully connected to 10.0.3.3:38412 (sock=8)
+[forward] handle_gnb_connection: Connected to AMF id=1, incremented connections to 2; total_conn_count=2
+[forward] forward_register_thread: Registered thread at slot 1
+[forward] handle_gnb_connection: Forwarding thread started at index 1
+[forward] forward_messages: Started forwarding messages (thread index 1)
+[main] Accepted new GNB connection from 10.0.3.12:9487
+[amf] get_active_amf_count: Active AMF count = 1
+[scale] scale_up_check: total_conn_count=2, threshold=9
+[scale] scale_up_check: Load below threshold, no scaling up needed
+[main] Scale up check completed.
+[forward] handle_gnb_connection: Handling new gNB socket 7
+[amf] get_next_amf_round_robin: Choosing next active AMF using round robin
+[amf] get_active_amf_count: Active AMF count = 1
+[amf] get_next_amf_round_robin: Selected AMF index 0 (id=1, ip=10.0.3.3)
+[amf] connect_to_amf: Connecting to AMF id=1 ip=10.0.3.3 port=38412
+[amf] connect_to_amf: Successfully connected to 10.0.3.3:38412 (sock=10)
+[forward] handle_gnb_connection: Connected to AMF id=1, incremented connections to 3; total_conn_count=3
+[forward] forward_register_thread: Registered thread at slot 2
+[forward] handle_gnb_connection: Forwarding thread started at index 2
+[forward] forward_messages: Started forwarding messages (thread index 2)
+[main] Accepted new GNB connection from 10.0.3.13:9487
+[amf] get_active_amf_count: Active AMF count = 1
+[scale] scale_up_check: total_conn_count=3, threshold=9
+[scale] scale_up_check: Load below threshold, no scaling up needed
+[main] Scale up check completed.
+[forward] handle_gnb_connection: Handling new gNB socket 9
+[amf] get_next_amf_round_robin: Choosing next active AMF using round robin
+[amf] get_active_amf_count: Active AMF count = 1
+[amf] get_next_amf_round_robin: Selected AMF index 0 (id=1, ip=10.0.3.3)
+[amf] connect_to_amf: Connecting to AMF id=1 ip=10.0.3.3 port=38412
+[amf] connect_to_amf: Successfully connected to 10.0.3.3:38412 (sock=12)
+[forward] handle_gnb_connection: Connected to AMF id=1, incremented connections to 4; total_conn_count=4
+[forward] forward_register_thread: Registered thread at slot 3
+[forward] handle_gnb_connection: Forwarding thread started at index 3
+[forward] forward_messages: Started forwarding messages (thread index 3)
+[amf] get_active_amf_count: Active AMF count = 1
+[scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[main] Accepted new GNB connection from 10.0.3.14:9487
+[amf] get_active_amf_count: Active AMF count = 1
+[scale] scale_up_check: total_conn_count=4, threshold=9
+[scale] scale_up_check: Load below threshold, no scaling up needed
+[main] Scale up check completed.
+[forward] handle_gnb_connection: Handling new gNB socket 11
+[amf] get_next_amf_round_robin: Choosing next active AMF using round robin
+[amf] get_active_amf_count: Active AMF count = 1
+[amf] get_next_amf_round_robin: Selected AMF index 0 (id=1, ip=10.0.3.3)
+[amf] connect_to_amf: Connecting to AMF id=1 ip=10.0.3.3 port=38412
+[amf] connect_to_amf: Successfully connected to 10.0.3.3:38412 (sock=14)
+[forward] handle_gnb_connection: Connected to AMF id=1, incremented connections to 5; total_conn_count=5
+[forward] forward_register_thread: Registered thread at slot 4
+[forward] handle_gnb_connection: Forwarding thread started at index 4
+[forward] forward_messages: Started forwarding messages (thread index 4)
+[main] Accepted new GNB connection from 10.0.3.15:9487
+[amf] get_active_amf_count: Active AMF count = 1
+[scale] scale_up_check: total_conn_count=5, threshold=9
+[scale] scale_up_check: Load below threshold, no scaling up needed
+[main] Scale up check completed.
+[forward] handle_gnb_connection: Handling new gNB socket 13
+[amf] get_next_amf_round_robin: Choosing next active AMF using round robin
+[amf] get_active_amf_count: Active AMF count = 1
+[amf] get_next_amf_round_robin: Selected AMF index 0 (id=1, ip=10.0.3.3)
+[amf] connect_to_amf: Connecting to AMF id=1 ip=10.0.3.3 port=38412
+[amf] connect_to_amf: Successfully connected to 10.0.3.3:38412 (sock=16)
+[forward] handle_gnb_connection: Connected to AMF id=1, incremented connections to 6; total_conn_count=6
+[forward] forward_register_thread: Registered thread at slot 5
+[forward] handle_gnb_connection: Forwarding thread started at index 5
+[forward] forward_messages: Started forwarding messages (thread index 5)
+[main] Accepted new GNB connection from 10.0.3.16:9487
+[amf] get_active_amf_count: Active AMF count = 1
+[scale] scale_up_check: total_conn_count=6, threshold=9
+[scale] scale_up_check: Load below threshold, no scaling up needed
+[main] Scale up check completed.
+[forward] handle_gnb_connection: Handling new gNB socket 15
+[amf] get_next_amf_round_robin: Choosing next active AMF using round robin
+[amf] get_active_amf_count: Active AMF count = 1
+[amf] get_next_amf_round_robin: Selected AMF index 0 (id=1, ip=10.0.3.3)
+[amf] connect_to_amf: Connecting to AMF id=1 ip=10.0.3.3 port=38412
+[amf] connect_to_amf: Successfully connected to 10.0.3.3:38412 (sock=18)
+[forward] handle_gnb_connection: Connected to AMF id=1, incremented connections to 7; total_conn_count=7
+[forward] forward_register_thread: Registered thread at slot 6
+[forward] handle_gnb_connection: Forwarding thread started at index 6
+[forward] forward_messages: Started forwarding messages (thread index 6)
+[main] Accepted new GNB connection from 10.0.3.17:9487
+[amf] get_active_amf_count: Active AMF count = 1
+[scale] scale_up_check: total_conn_count=7, threshold=9
+[scale] scale_up_check: Load below threshold, no scaling up needed
+[main] Scale up check completed.
+[forward] handle_gnb_connection: Handling new gNB socket 17
+[amf] get_next_amf_round_robin: Choosing next active AMF using round robin
+[amf] get_active_amf_count: Active AMF count = 1
+[amf] get_next_amf_round_robin: Selected AMF index 0 (id=1, ip=10.0.3.3)
+[amf] connect_to_amf: Connecting to AMF id=1 ip=10.0.3.3 port=38412
+[amf] connect_to_amf: Successfully connected to 10.0.3.3:38412 (sock=20)
+[forward] handle_gnb_connection: Connected to AMF id=1, incremented connections to 8; total_conn_count=8
+[forward] forward_register_thread: Registered thread at slot 7
+[forward] handle_gnb_connection: Forwarding thread started at index 7
+[forward] forward_messages: Started forwarding messages (thread index 7)
+[main] Accepted new GNB connection from 10.0.3.18:9487
+[amf] get_active_amf_count: Active AMF count = 1
+[scale] scale_up_check: total_conn_count=8, threshold=9
+[scale] scale_up_check: Load below threshold, no scaling up needed
+[main] Scale up check completed.
+[forward] handle_gnb_connection: Handling new gNB socket 19
+[amf] get_next_amf_round_robin: Choosing next active AMF using round robin
+[amf] get_active_amf_count: Active AMF count = 1
+[amf] get_next_amf_round_robin: Selected AMF index 0 (id=1, ip=10.0.3.3)
+[amf] connect_to_amf: Connecting to AMF id=1 ip=10.0.3.3 port=38412
+[amf] connect_to_amf: Successfully connected to 10.0.3.3:38412 (sock=22)
+[forward] handle_gnb_connection: Connected to AMF id=1, incremented connections to 9; total_conn_count=9
+[forward] forward_register_thread: Registered thread at slot 8
+[forward] handle_gnb_connection: Forwarding thread started at index 8
+[forward] forward_messages: Started forwarding messages (thread index 8)
+[main] Accepted new GNB connection from 10.0.3.19:9487
+[amf] get_active_amf_count: Active AMF count = 1
+[scale] scale_up_check: total_conn_count=9, threshold=9
+[scale] SCALE UP: Load (9) exceeds threshold (9). Deploying AMF 2...
+deployment.apps/core5g-amf-2-deployment scaled
+[main] Scale up check completed.
+[forward] handle_gnb_connection: Handling new gNB socket 21
+[amf] get_next_amf_round_robin: Choosing next active AMF using round robin
+[amf] get_active_amf_count: Active AMF count = 2
+[amf] get_next_amf_round_robin: Selected AMF index 1 (id=2, ip=10.0.3.4)
+[amf] connect_to_amf: Connecting to AMF id=2 ip=10.0.3.4 port=38412
+[main] Accepted new GNB connection from 10.0.3.20:9487
+[amf] connect_to_amf: Failed to connect to 10.0.3.4:38412
+[forward] handle_gnb_connection: Failed to connect to AMF id=2 ip=10.0.3.4
+[amf] get_active_amf_count: Active AMF count = 2
+[scale] scale_up_check: total_conn_count=9, threshold=19
+[scale] scale_up_check: Load below threshold, no scaling up needed
+[main] Scale up check completed.
+[forward] handle_gnb_connection: Handling new gNB socket 23
+[amf] get_next_amf_round_robin: Choosing next active AMF using round robin
+[amf] get_active_amf_count: Active AMF count = 2
+[amf] get_next_amf_round_robin: Selected AMF index 0 (id=1, ip=10.0.3.3)
+[amf] connect_to_amf: Connecting to AMF id=1 ip=10.0.3.3 port=38412
+[amf] connect_to_amf: Successfully connected to 10.0.3.3:38412 (sock=24)
+[forward] handle_gnb_connection: Connected to AMF id=1, incremented connections to 10; total_conn_count=10
+[forward] forward_register_thread: Registered thread at slot 9
+[forward] handle_gnb_connection: Forwarding thread started at index 9
+[forward] forward_messages: Started forwarding messages (thread index 9)
+[amf] get_active_amf_count: Active AMF count = 2
+[scale] descaling_thread_func: Checking AMF 1 utilization: 1.00
+[scale] descaling_thread_func: Checking AMF 2 utilization: 0.00
+[scale] No suitable AMF found for migration from AMF 2
+[main] Accepted new GNB connection from 10.0.3.21:9487
+[amf] get_active_amf_count: Active AMF count = 2
+[scale] scale_up_check: total_conn_count=10, threshold=19
+[scale] scale_up_check: Load below threshold, no scaling up needed
+[main] Scale up check completed.
+[forward] handle_gnb_connection: Handling new gNB socket 21
+[amf] get_next_amf_round_robin: Choosing next active AMF using round robin
+[amf] get_active_amf_count: Active AMF count = 2
+[amf] get_next_amf_round_robin: Selected AMF index 1 (id=2, ip=10.0.3.4)
+[amf] connect_to_amf: Connecting to AMF id=2 ip=10.0.3.4 port=38412
+[amf] connect_to_amf: Successfully connected to 10.0.3.4:38412 (sock=26)
+[forward] handle_gnb_connection: Connected to AMF id=2, incremented connections to 1; total_conn_count=11
+[forward] forward_register_thread: Registered thread at slot 10
+[forward] handle_gnb_connection: Forwarding thread started at index 10
+[forward] forward_messages: Started forwarding messages (thread index 10)
+[main] Accepted new GNB connection from 10.0.3.22:9487
+[amf] get_active_amf_count: Active AMF count = 2
+[scale] scale_up_check: total_conn_count=11, threshold=19
+[scale] scale_up_check: Load below threshold, no scaling up needed
+[main] Scale up check completed.
+[forward] handle_gnb_connection: Handling new gNB socket 25
+[amf] get_next_amf_round_robin: Choosing next active AMF using round robin
+[amf] get_active_amf_count: Active AMF count = 2
+[amf] get_next_amf_round_robin: Selected AMF index 0 (id=1, ip=10.0.3.3)
+[amf] connect_to_amf: Connecting to AMF id=1 ip=10.0.3.3 port=38412
+[amf] connect_to_amf: Successfully connected to 10.0.3.3:38412 (sock=28)
+[forward] handle_gnb_connection: Connected to AMF id=1, incremented connections to 11; total_conn_count=12
+[forward] forward_register_thread: Registered thread at slot 11
+[forward] forward_messages: Started forwarding messages (thread index 11)
+[forward] handle_gnb_connection: Forwarding thread started at index 11
+[main] Accepted new GNB connection from 10.0.3.23:9487
+[amf] get_active_amf_count: Active AMF count = 2
+[scale] scale_up_check: total_conn_count=12, threshold=19
+[scale] scale_up_check: Load below threshold, no scaling up needed
+[main] Scale up check completed.
+[forward] handle_gnb_connection: Handling new gNB socket 27
+[amf] get_next_amf_round_robin: Choosing next active AMF using round robin
+[amf] get_active_amf_count: Active AMF count = 2
+[amf] get_next_amf_round_robin: Selected AMF index 1 (id=2, ip=10.0.3.4)
+[amf] connect_to_amf: Connecting to AMF id=2 ip=10.0.3.4 port=38412
+[amf] connect_to_amf: Successfully connected to 10.0.3.4:38412 (sock=30)
+[forward] handle_gnb_connection: Connected to AMF id=2, incremented connections to 2; total_conn_count=13
+[forward] forward_register_thread: Registered thread at slot 12
+[forward] handle_gnb_connection: Forwarding thread started at index 12
+[forward] forward_messages: Started forwarding messages (thread index 12)
+[amf] get_active_amf_count: Active AMF count = 2
+[scale] descaling_thread_func: Checking AMF 1 utilization: 1.10
+[scale] descaling_thread_func: Checking AMF 2 utilization: 0.20
+[amf] get_active_amf_count: Active AMF count = 2
+[scale] descaling_thread_func: Checking AMF 1 utilization: 1.10
+[scale] descaling_thread_func: Checking AMF 2 utilization: 0.20
+[amf] get_active_amf_count: Active AMF count = 2
+[scale] descaling_thread_func: Checking AMF 1 utilization: 1.10
+[scale] descaling_thread_func: Checking AMF 2 utilization: 0.20
+[amf] get_active_amf_count: Active AMF count = 2
+[scale] descaling_thread_func: Checking AMF 1 utilization: 1.10
+[scale] descaling_thread_func: Checking AMF 2 utilization: 0.20
+[amf] get_active_amf_count: Active AMF count = 2
+[scale] descaling_thread_func: Checking AMF 1 utilization: 1.10
+[scale] descaling_thread_func: Checking AMF 2 utilization: 0.20
+[amf] get_active_amf_count: Active AMF count = 2
+[scale] descaling_thread_func: Checking AMF 1 utilization: 1.10
+[scale] descaling_thread_func: Checking AMF 2 utilization: 0.20
+[amf] get_active_amf_count: Active AMF count = 2
+[scale] descaling_thread_func: Checking AMF 1 utilization: 1.10
+[scale] descaling_thread_func: Checking AMF 2 utilization: 0.20
+[amf] get_active_amf_count: Active AMF count = 2
+[scale] descaling_thread_func: Checking AMF 1 utilization: 1.10
+[scale] descaling_thread_func: Checking AMF 2 utilization: 0.20
+[amf] get_active_amf_count: Active AMF count = 2
+[scale] descaling_thread_func: Checking AMF 1 utilization: 1.10
+[scale] descaling_thread_func: Checking AMF 2 utilization: 0.20
+[amf] get_active_amf_count: Active AMF count = 2
+[scale] descaling_thread_func: Checking AMF 1 utilization: 1.10
+[scale] descaling_thread_func: Checking AMF 2 utilization: 0.20
+[main] Accepted new GNB connection from 10.0.3.24:9487
+[amf] get_active_amf_count: Active AMF count = 2
+[scale] scale_up_check: total_conn_count=13, threshold=19
+[scale] scale_up_check: Load below threshold, no scaling up needed
+[main] Scale up check completed.
+[forward] handle_gnb_connection: Handling new gNB socket 29
+[amf] get_next_amf_round_robin: Choosing next active AMF using round robin
+[amf] get_active_amf_count: Active AMF count = 2
+[amf] get_next_amf_round_robin: Selected AMF index 0 (id=1, ip=10.0.3.3)
+[amf] connect_to_amf: Connecting to AMF id=1 ip=10.0.3.3 port=38412
+[amf] connect_to_amf: Successfully connected to 10.0.3.3:38412 (sock=32)
+[forward] handle_gnb_connection: Connected to AMF id=1, incremented connections to 12; total_conn_count=14
+[forward] forward_register_thread: Registered thread at slot 13
+[forward] handle_gnb_connection: Forwarding thread started at index 13
+[forward] forward_messages: Started forwarding messages (thread index 13)
+[main] Accepted new GNB connection from 10.0.3.25:9487
+[amf] get_active_amf_count: Active AMF count = 2
+[scale] scale_up_check: total_conn_count=14, threshold=19
+[scale] scale_up_check: Load below threshold, no scaling up needed
+[main] Scale up check completed.
+[forward] handle_gnb_connection: Handling new gNB socket 31
+[amf] get_next_amf_round_robin: Choosing next active AMF using round robin
+[amf] get_active_amf_count: Active AMF count = 2
+[amf] get_next_amf_round_robin: Selected AMF index 1 (id=2, ip=10.0.3.4)
+[amf] connect_to_amf: Connecting to AMF id=2 ip=10.0.3.4 port=38412
+[amf] connect_to_amf: Successfully connected to 10.0.3.4:38412 (sock=34)
+[forward] handle_gnb_connection: Connected to AMF id=2, incremented connections to 3; total_conn_count=15
+[forward] forward_register_thread: Registered thread at slot 14
+[forward] handle_gnb_connection: Forwarding thread started at index 14
+[forward] forward_messages: Started forwarding messages (thread index 14)
+[amf] get_active_amf_count: Active AMF count = 2
+[scale] descaling_thread_func: Checking AMF 1 utilization: 1.20
+[scale] descaling_thread_func: Checking AMF 2 utilization: 0.30
+[amf] get_active_amf_count: Active AMF count = 2
+[scale] descaling_thread_func: Checking AMF 1 utilization: 1.20
+[scale] descaling_thread_func: Checking AMF 2 utilization: 0.30
+[amf] get_active_amf_count: Active AMF count = 2
+[scale] descaling_thread_func: Checking AMF 1 utilization: 1.20
+[scale] descaling_thread_func: Checking AMF 2 utilization: 0.30
+[amf] get_active_amf_count: Active AMF count = 2
+[scale] descaling_thread_func: Checking AMF 1 utilization: 1.20
+[scale] descaling_thread_func: Checking AMF 2 utilization: 0.30
+[amf] get_active_amf_count: Active AMF count = 2
+[scale] descaling_thread_func: Checking AMF 1 utilization: 1.20
+[scale] descaling_thread_func: Checking AMF 2 utilization: 0.30
+[amf] get_active_amf_count: Active AMF count = 2
+[scale] descaling_thread_func: Checking AMF 1 utilization: 1.20
+[scale] descaling_thread_func: Checking AMF 2 utilization: 0.30
+[amf] get_active_amf_count: Active AMF count = 2
+[scale] descaling_thread_func: Checking AMF 1 utilization: 1.20
+[scale] descaling_thread_func: Checking AMF 2 utilization: 0.30

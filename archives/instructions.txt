@@ -1,0 +1,62 @@
+**Prompt for LLM:**
+
+I am working on my **B.Tech Thesis Project (BTP)**, which is a **5G network simulation using Kubernetes deployment**. The source code for this project is hosted here: https://github.com/vrajpat3ll/btp
+
+The project involves **deployment, scaling, and testing**, and I need you to generate **code, scripts, algorithms, and explanations** to handle the following tasks:
+
+---
+
+### **1. Testing Phase**
+
+* Instead of launching processes inside a `gnome-terminal`, I want to simply **run the process directly**.
+* After launching the process, the script should **capture its process ID (PID)** and **write/append it to a file**.
+
+  * Each entry should store the **PID along with the RAN-simulator’s unique ID**, so that processes can later be stopped or managed individually.
+* I also want a script that can **automatically generate `n` RAN-simulator Helm charts**, where `n` is configurable through **command-line arguments**.
+
+**Deliverable:**
+
+* A **testing script** (Bash or Python) that:
+
+  1. Runs a process directly,
+  2. Stores the PID + simulator ID in a file,
+  3. Provides functionality to later stop/manage processes using the stored PID.
+* A **Helm chart generation script** that takes an integer `n` and generates that many RAN-simulator Helm chart instances.
+
+---
+
+### **2. Deployment Phase**
+
+* The deployment already works as intended, so **no major changes are needed**.
+* Ensure that the **testing scripts integrate smoothly** with the existing deployment pipeline from the GitHub repo.
+
+---
+
+### **3. Load Balancing & Auto-Scaling Phase**
+
+* I need a **new auto-scaling algorithm** for **AMF (Access and Mobility Management Function) pods** inside the Kubernetes-based 5G deployment.
+* The algorithm should follow a **greedy approach**:
+
+  * Use the **minimum resources possible**.
+  * **Anticipate future demand** to avoid under-provisioning.
+  * Be efficient in balancing **cost (resource usage)** and **performance (demand handling)**.
+
+**Deliverable:**
+
+* A **greedy-based strategy description**.
+* **Pseudocode** (or implementation in Python, Go, or Kubernetes YAML/CRD extensions) that could integrate with:
+
+  * Kubernetes **Horizontal Pod Autoscaler (HPA)**, or
+  * A **custom controller**.
+
+---
+
+### **Final Deliverables from the LLM**
+
+1. A **testing script** (Bash/Python) for process management (run process, log PID + ID, stop/manage later).
+2. A **Helm chart generation script** to spin up `n` RAN-simulator instances.
+3. An **auto-scaling algorithm** for AMF pods with:
+
+   * Greedy-based approach,
+   * Pseudocode or example implementation.
+4. **Clear explanations** of how these components fit together in the workflow of a **5G Kubernetes deployment project** (with references to the GitHub repo).

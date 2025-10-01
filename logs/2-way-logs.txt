@@ -1,0 +1,132 @@
+btp@btp:~/Desktop/btp$ sudo kubectl exec -ti -n loadbalancer lb-0 -- bash
+[sudo] password for btp: 
+root@lb-0:/# ./lb/lb
+[main] Initializing AMF and forwarding tables...
+[forward] forward_init_table: Initializing live thread table
+[main] Binding socket to 10.0.3.1:38412
+[main] Setting up socket for listening (100 max connections)...
+[main] Proxy listening on 10.0.3.1:38412 with AMF capacity 10
+[main] Accepted new GNB connection from 10.0.3.55:9487
+[amf] get_active_amf_count: Active AMF count = 1
+[scale] scale_up_check: total_conn_count=0, threshold=9
+[scale] scale_up_check: Load below threshold, no scaling up needed
+[main] Scale up check completed.
+[forward] handle_gnb_connection: Handling new gNB socket 4
+[amf] get_next_amf_round_robin: Choosing next active AMF using round robin
+[amf] get_active_amf_count: Active AMF count = 1
+[amf] get_next_amf_round_robin: Selected AMF index 0 (id=1, ip=10.0.3.3)
+[amf] connect_to_amf: Connecting to AMF id=1 ip=10.0.3.3 port=38412
+[amf] connect_to_amf: Successfully connected to 10.0.3.3:38412 (sock=6)
+[forward] handle_gnb_connection: Connected to AMF id=1, incremented connections to 1; total_conn_count=1
+[forward] forward_register_thread: Registered thread at slot 0
+[forward] handle_gnb_connection: GNB->AMF forwarding thread started at index 0
+[forward] forward_register_thread: Registered thread at slot 1
+[forward] forward_messages: Started forwarding messages (thread index 0)
+[forward] forward_messages: Transfered 63 bytes of data; sockets 4->6
+[forward] handle_gnb_connection: AMF->GNB forwarding thread started at index 1
+[forward] forward_messages: Started forwarding messages (thread index 1)
+[forward] forward_messages: Transfered 57 bytes of data; sockets 6->4
+[forward] forward_messages: Transfered 76 bytes of data; sockets 4->6
+[forward] forward_messages: Transfered 66 bytes of data; sockets 6->4
+[forward] forward_messages: Transfered 64 bytes of data; sockets 4->6
+[forward] forward_messages: Transfered 43 bytes of data; sockets 6->4
+[forward] forward_messages: Transfered 100 bytes of data; sockets 4->6
+[forward] forward_messages: Transfered 155 bytes of data; sockets 6->4
+[forward] forward_messages: Transfered 19 bytes of data; sockets 4->6
+[forward] forward_messages: Transfered 53 bytes of data; sockets 4->6
+[forward] forward_messages: Transfered 96 bytes of data; sockets 4->6
+[forward] forward_messages: Transfered 64 bytes of data; sockets 6->4
+[forward] forward_messages: Transfered 185 bytes of data; sockets 6->4
+[forward] forward_messages: Transfered 40 bytes of data; sockets 4->6
+[main] Accepted new GNB connection from 10.0.3.56:9487
+[amf] get_active_amf_count: Active AMF count = 1
+[scale] scale_up_check: total_conn_count=1, threshold=9
+[scale] scale_up_check: Load below threshold, no scaling up needed
+[main] Scale up check completed.
+[forward] handle_gnb_connection: Handling new gNB socket 5
+[amf] get_next_amf_round_robin: Choosing next active AMF using round robin
+[amf] get_active_amf_count: Active AMF count = 1
+[amf] get_next_amf_round_robin: Selected AMF index 0 (id=1, ip=10.0.3.3)
+[amf] connect_to_amf: Connecting to AMF id=1 ip=10.0.3.3 port=38412
+[amf] connect_to_amf: Successfully connected to 10.0.3.3:38412 (sock=8)
+[forward] handle_gnb_connection: Connected to AMF id=1, incremented connections to 2; total_conn_count=2
+[forward] forward_register_thread: Registered thread at slot 2
+[forward] handle_gnb_connection: GNB->AMF forwarding thread started at index 2
+[forward] forward_register_thread: Registered thread at slot 3
+[forward] handle_gnb_connection: AMF->GNB forwarding thread started at index 3
+[forward] forward_messages: Started forwarding messages (thread index 2)
+[forward] forward_messages: Transfered 63 bytes of data; sockets 5->8
+[forward] forward_messages: Started forwarding messages (thread index 3)
+[forward] forward_messages: Transfered 57 bytes of data; sockets 8->5
+[forward] forward_messages: Transfered 76 bytes of data; sockets 5->8
+[forward] forward_messages: Transfered 20 bytes of data; sockets 6->4
+[forward] forward_messages: Transfered 66 bytes of data; sockets 8->5
+[forward] forward_messages: Transfered 64 bytes of data; sockets 5->8
+[forward] forward_messages: Transfered 43 bytes of data; sockets 8->5
+[forward] forward_messages: Transfered 100 bytes of data; sockets 5->8
+[forward] forward_messages: Transfered 155 bytes of data; sockets 8->5
+[forward] forward_messages: Transfered 53 bytes of data; sockets 5->8
+[forward] forward_messages: Transfered 64 bytes of data; sockets 8->5
+[forward] forward_messages: Transfered 19 bytes of data; sockets 5->8
+[forward] forward_messages: Transfered 96 bytes of data; sockets 5->8
+[forward] forward_messages: Transfered 185 bytes of data; sockets 8->5
+[forward] forward_messages: Transfered 40 bytes of data; sockets 5->8
+[amf] get_active_amf_count: Active AMF count = 1
+[scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[main] Accepted new GNB connection from 10.0.3.57:9487
+[amf] get_active_amf_count: Active AMF count = 1
+[scale] scale_up_check: total_conn_count=2, threshold=9
+[scale] scale_up_check: Load below threshold, no scaling up needed
+[main] Scale up check completed.
+[forward] handle_gnb_connection: Handling new gNB socket 7
+[amf] get_next_amf_round_robin: Choosing next active AMF using round robin
+[amf] get_active_amf_count: Active AMF count = 1
+[amf] get_next_amf_round_robin: Selected AMF index 0 (id=1, ip=10.0.3.3)
+[amf] connect_to_amf: Connecting to AMF id=1 ip=10.0.3.3 port=38412
+[amf] connect_to_amf: Successfully connected to 10.0.3.3:38412 (sock=10)
+[forward] handle_gnb_connection: Connected to AMF id=1, incremented connections to 3; total_conn_count=3
+[forward] forward_register_thread: Registered thread at slot 4
+[forward] handle_gnb_connection: GNB->AMF forwarding thread started at index 4
+[forward] forward_register_thread: Registered thread at slot 5
+[forward] forward_messages: Started forwarding messages (thread index 4)
+[forward] handle_gnb_connection: AMF->GNB forwarding thread started at index 5
+[forward] forward_messages: Transfered 63 bytes of data; sockets 7->10
+[forward] forward_messages: Started forwarding messages (thread index 5)
+[forward] forward_messages: Transfered 57 bytes of data; sockets 10->7
+[forward] forward_messages: Transfered 76 bytes of data; sockets 7->10
+[forward] forward_messages: Transfered 20 bytes of data; sockets 8->5
+[forward] forward_messages: Transfered 66 bytes of data; sockets 10->7
+[forward] forward_messages: Transfered 64 bytes of data; sockets 7->10
+[forward] forward_messages: Transfered 43 bytes of data; sockets 10->7
+[forward] forward_messages: Transfered 100 bytes of data; sockets 7->10
+[forward] forward_messages: Transfered 155 bytes of data; sockets 10->7
+[forward] forward_messages: Transfered 53 bytes of data; sockets 7->10
+[forward] forward_messages: Transfered 64 bytes of data; sockets 10->7
+[forward] forward_messages: Transfered 19 bytes of data; sockets 7->10
+[forward] forward_messages: Transfered 96 bytes of data; sockets 7->10
+[forward] forward_messages: Transfered 185 bytes of data; sockets 10->7
+[forward] forward_messages: Transfered 40 bytes of data; sockets 7->10
+[amf] get_active_amf_count: Active AMF count = 1
+[scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[amf] get_active_amf_count: Active AMF count = 1
+[scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[amf] get_active_amf_count: Active AMF count = 1
+[scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[amf] get_active_amf_count: Active AMF count = 1
+[scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[amf] get_active_amf_count: Active AMF count = 1
+[scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[amf] get_active_amf_count: Active AMF count = 1
+[scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[amf] get_active_amf_count: Active AMF count = 1
+[scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[amf] get_active_amf_count: Active AMF count = 1
+[scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[amf] get_active_amf_count: Active AMF count = 1
+[scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[amf] get_active_amf_count: Active AMF count = 1
+[scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[amf] get_active_amf_count: Active AMF count = 1
+[scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down
+[amf] get_active_amf_count: Active AMF count = 1
+[scale] descaling_thread_func: Only 1 active AMF(s), skipping scale down

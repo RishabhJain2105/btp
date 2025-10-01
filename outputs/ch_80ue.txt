@@ -1,0 +1,333 @@
+sudo kubectl -n loadbalancer exec -ti lb-0 -- bash
+root@lb-0:/# ls
+bin   consistent_hashing    dev  home  lib32  libx32         load_balancer.c  mnt  proc          product_uuid  reactive_lb.c  run   srv  threshold_lb    tmp  var
+boot  consistent_hashing.c  etc  lib   lib64  load_balancer  media            opt  product_name  reactive_lb   root           sbin  sys  threshold_lb.c  usr
+root@lb-0:/# ./consistent_hashing 
+Usage: ./consistent_hashing <amf_capacity>
+root@lb-0:/# ./consistent_hashing 2
+Proxy listening on IP 10.0.3.1, port 38412
+Consistent hashing ring: AMF1 at position 0, AMF2 at position 30, AMF3 at position 60
+
+gNB 1 connected from IP 10.0.3.10
+gNB IP 10.0.3.10 hashed to position 10
+Connected to AMF 1 in 0.31 ms
+
+gNB 2 connected from IP 10.0.3.11
+gNB IP 10.0.3.11 hashed to position 11
+Connected to AMF 1 in 0.19 ms
+deployment.apps/core5g-amf-2-deployment scaled
+
+gNB 3 connected from IP 10.0.3.12
+gNB IP 10.0.3.12 hashed to position 12
+Connected to AMF 1 in 0.17 ms
+
+gNB 4 connected from IP 10.0.3.13
+gNB IP 10.0.3.13 hashed to position 13
+Connected to AMF 1 in 0.27 ms
+deployment.apps/core5g-amf-3-deployment scaled
+
+gNB 5 connected from IP 10.0.3.14
+gNB IP 10.0.3.14 hashed to position 14
+Connected to AMF 1 in 0.34 ms
+
+gNB 6 connected from IP 10.0.3.15
+gNB IP 10.0.3.15 hashed to position 15
+Connected to AMF 1 in 0.14 ms
+
+gNB 7 connected from IP 10.0.3.16
+gNB IP 10.0.3.16 hashed to position 16
+Connected to AMF 1 in 0.13 ms
+
+gNB 8 connected from IP 10.0.3.17
+gNB IP 10.0.3.17 hashed to position 17
+Connected to AMF 1 in 0.18 ms
+
+gNB 9 connected from IP 10.0.3.18
+gNB IP 10.0.3.18 hashed to position 18
+Connected to AMF 1 in 0.23 ms
+
+gNB 10 connected from IP 10.0.3.19
+gNB IP 10.0.3.19 hashed to position 19
+Connected to AMF 1 in 0.18 ms
+
+gNB 11 connected from IP 10.0.3.20
+gNB IP 10.0.3.20 hashed to position 20
+Connected to AMF 1 in 0.17 ms
+
+gNB 12 connected from IP 10.0.3.21
+gNB IP 10.0.3.21 hashed to position 21
+Connected to AMF 1 in 0.35 ms
+
+gNB 13 connected from IP 10.0.3.22
+gNB IP 10.0.3.22 hashed to position 22
+Connected to AMF 1 in 0.27 ms
+
+gNB 14 connected from IP 10.0.3.23
+gNB IP 10.0.3.23 hashed to position 23
+Connected to AMF 1 in 0.08 ms
+
+gNB 15 connected from IP 10.0.3.24
+gNB IP 10.0.3.24 hashed to position 24
+Connected to AMF 1 in 0.13 ms
+
+gNB 16 connected from IP 10.0.3.25
+gNB IP 10.0.3.25 hashed to position 25
+Connected to AMF 1 in 0.14 ms
+
+gNB 17 connected from IP 10.0.3.26
+gNB IP 10.0.3.26 hashed to position 26
+Connected to AMF 1 in 0.17 ms
+AMF 2 at 10.0.3.4 is back online!
+AMF 3 at 10.0.3.5 is back online!
+
+gNB 18 connected from IP 10.0.3.27
+gNB IP 10.0.3.27 hashed to position 27
+Connected to AMF 2 in 0.25 ms
+
+gNB 19 connected from IP 10.0.3.28
+gNB IP 10.0.3.28 hashed to position 28
+Connected to AMF 2 in 0.19 ms
+
+gNB 20 connected from IP 10.0.3.29
+gNB IP 10.0.3.29 hashed to position 29
+Connected to AMF 2 in 0.11 ms
+
+gNB 21 connected from IP 10.0.3.30
+gNB IP 10.0.3.30 hashed to position 30
+Connected to AMF 2 in 0.14 ms
+
+gNB 22 connected from IP 10.0.3.31
+gNB IP 10.0.3.31 hashed to position 31
+Connected to AMF 3 in 0.10 ms
+
+gNB 23 connected from IP 10.0.3.32
+gNB IP 10.0.3.32 hashed to position 32
+Connected to AMF 3 in 0.22 ms
+
+gNB 24 connected from IP 10.0.3.33
+gNB IP 10.0.3.33 hashed to position 33
+Connected to AMF 3 in 0.27 ms
+
+gNB 25 connected from IP 10.0.3.34
+gNB IP 10.0.3.34 hashed to position 34
+Connected to AMF 3 in 0.12 ms
+
+gNB 26 connected from IP 10.0.3.35
+gNB IP 10.0.3.35 hashed to position 35
+Connected to AMF 3 in 0.28 ms
+
+gNB 27 connected from IP 10.0.3.36
+gNB IP 10.0.3.36 hashed to position 36
+Connected to AMF 3 in 0.10 ms
+
+gNB 28 connected from IP 10.0.3.37
+gNB IP 10.0.3.37 hashed to position 37
+Connected to AMF 3 in 0.19 ms
+
+gNB 29 connected from IP 10.0.3.38
+gNB IP 10.0.3.38 hashed to position 38
+Connected to AMF 3 in 0.25 ms
+
+gNB 30 connected from IP 10.0.3.39
+gNB IP 10.0.3.39 hashed to position 39
+Connected to AMF 3 in 0.09 ms
+
+gNB 31 connected from IP 10.0.3.40
+gNB IP 10.0.3.40 hashed to position 40
+Connected to AMF 3 in 0.20 ms
+
+gNB 32 connected from IP 10.0.3.41
+gNB IP 10.0.3.41 hashed to position 41
+Connected to AMF 3 in 0.12 ms
+
+gNB 33 connected from IP 10.0.3.42
+gNB IP 10.0.3.42 hashed to position 42
+Connected to AMF 3 in 0.18 ms
+
+gNB 34 connected from IP 10.0.3.43
+gNB IP 10.0.3.43 hashed to position 43
+Connected to AMF 3 in 0.12 ms
+
+gNB 35 connected from IP 10.0.3.44
+gNB IP 10.0.3.44 hashed to position 44
+Connected to AMF 3 in 0.25 ms
+
+gNB 36 connected from IP 10.0.3.45
+gNB IP 10.0.3.45 hashed to position 45
+Connected to AMF 3 in 0.14 ms
+
+gNB 37 connected from IP 10.0.3.46
+gNB IP 10.0.3.46 hashed to position 46
+Connected to AMF 3 in 0.15 ms
+
+gNB 38 connected from IP 10.0.3.47
+gNB IP 10.0.3.47 hashed to position 47
+Connected to AMF 3 in 0.09 ms
+
+gNB 39 connected from IP 10.0.3.48
+gNB IP 10.0.3.48 hashed to position 48
+Connected to AMF 3 in 0.35 ms
+
+gNB 40 connected from IP 10.0.3.49
+gNB IP 10.0.3.49 hashed to position 49
+Connected to AMF 3 in 0.10 ms
+
+gNB 41 connected from IP 10.0.3.50
+gNB IP 10.0.3.50 hashed to position 50
+Connected to AMF 3 in 0.25 ms
+
+gNB 42 connected from IP 10.0.3.51
+gNB IP 10.0.3.51 hashed to position 51
+Connected to AMF 3 in 0.11 ms
+
+gNB 43 connected from IP 10.0.3.52
+gNB IP 10.0.3.52 hashed to position 52
+Connected to AMF 3 in 0.13 ms
+
+gNB 44 connected from IP 10.0.3.53
+gNB IP 10.0.3.53 hashed to position 53
+Connected to AMF 3 in 0.14 ms
+
+gNB 45 connected from IP 10.0.3.54
+gNB IP 10.0.3.54 hashed to position 54
+Connected to AMF 3 in 0.10 ms
+
+gNB 46 connected from IP 10.0.3.55
+gNB IP 10.0.3.55 hashed to position 55
+Connected to AMF 3 in 0.13 ms
+
+gNB 47 connected from IP 10.0.3.56
+gNB IP 10.0.3.56 hashed to position 56
+Connected to AMF 3 in 0.10 ms
+
+gNB 48 connected from IP 10.0.3.57
+gNB IP 10.0.3.57 hashed to position 57
+Connected to AMF 3 in 0.17 ms
+
+gNB 49 connected from IP 10.0.3.58
+gNB IP 10.0.3.58 hashed to position 58
+Connected to AMF 3 in 0.16 ms
+
+gNB 50 connected from IP 10.0.3.59
+gNB IP 10.0.3.59 hashed to position 59
+Connected to AMF 3 in 0.25 ms
+
+gNB 51 connected from IP 10.0.3.60
+gNB IP 10.0.3.60 hashed to position 60
+Connected to AMF 3 in 0.09 ms
+
+gNB 52 connected from IP 10.0.3.61
+gNB IP 10.0.3.61 hashed to position 61
+Connected to AMF 1 in 0.10 ms
+
+gNB 53 connected from IP 10.0.3.62
+gNB IP 10.0.3.62 hashed to position 62
+Connected to AMF 1 in 0.24 ms
+
+gNB 54 connected from IP 10.0.3.63
+gNB IP 10.0.3.63 hashed to position 63
+Connected to AMF 1 in 0.16 ms
+
+gNB 55 connected from IP 10.0.3.64
+gNB IP 10.0.3.64 hashed to position 64
+Connected to AMF 1 in 0.09 ms
+
+gNB 56 connected from IP 10.0.3.65
+gNB IP 10.0.3.65 hashed to position 65
+Connected to AMF 1 in 0.13 ms
+
+gNB 57 connected from IP 10.0.3.66
+gNB IP 10.0.3.66 hashed to position 66
+Connected to AMF 1 in 0.10 ms
+
+gNB 58 connected from IP 10.0.3.67
+gNB IP 10.0.3.67 hashed to position 67
+Connected to AMF 1 in 0.10 ms
+
+gNB 59 connected from IP 10.0.3.68
+gNB IP 10.0.3.68 hashed to position 68
+Connected to AMF 1 in 0.19 ms
+
+gNB 60 connected from IP 10.0.3.69
+gNB IP 10.0.3.69 hashed to position 69
+Connected to AMF 1 in 0.12 ms
+
+gNB 61 connected from IP 10.0.3.70
+gNB IP 10.0.3.70 hashed to position 70
+Connected to AMF 1 in 0.09 ms
+
+gNB 62 connected from IP 10.0.3.71
+gNB IP 10.0.3.71 hashed to position 71
+Connected to AMF 1 in 0.15 ms
+
+gNB 63 connected from IP 10.0.3.72
+gNB IP 10.0.3.72 hashed to position 72
+Connected to AMF 1 in 0.16 ms
+
+gNB 64 connected from IP 10.0.3.73
+gNB IP 10.0.3.73 hashed to position 73
+Connected to AMF 1 in 0.14 ms
+
+gNB 65 connected from IP 10.0.3.74
+gNB IP 10.0.3.74 hashed to position 74
+Connected to AMF 1 in 0.11 ms
+
+gNB 66 connected from IP 10.0.3.75
+gNB IP 10.0.3.75 hashed to position 75
+Connected to AMF 1 in 0.10 ms
+
+gNB 67 connected from IP 10.0.3.76
+gNB IP 10.0.3.76 hashed to position 76
+Connected to AMF 1 in 0.14 ms
+
+gNB 68 connected from IP 10.0.3.77
+gNB IP 10.0.3.77 hashed to position 77
+Connected to AMF 1 in 0.10 ms
+
+gNB 69 connected from IP 10.0.3.78
+gNB IP 10.0.3.78 hashed to position 78
+Connected to AMF 1 in 0.11 ms
+
+gNB 70 connected from IP 10.0.3.79
+gNB IP 10.0.3.79 hashed to position 79
+Connected to AMF 1 in 0.13 ms
+
+gNB 71 connected from IP 10.0.3.80
+gNB IP 10.0.3.80 hashed to position 80
+Connected to AMF 1 in 0.11 ms
+
+gNB 72 connected from IP 10.0.3.81
+gNB IP 10.0.3.81 hashed to position 81
+Connected to AMF 1 in 0.13 ms
+
+gNB 73 connected from IP 10.0.3.82
+gNB IP 10.0.3.82 hashed to position 82
+Connected to AMF 1 in 0.14 ms
+
+gNB 74 connected from IP 10.0.3.83
+gNB IP 10.0.3.83 hashed to position 83
+Connected to AMF 1 in 0.18 ms
+
+gNB 75 connected from IP 10.0.3.84
+gNB IP 10.0.3.84 hashed to position 84
+Connected to AMF 1 in 0.12 ms
+
+gNB 76 connected from IP 10.0.3.85
+gNB IP 10.0.3.85 hashed to position 85
+Connected to AMF 1 in 0.11 ms
+
+gNB 77 connected from IP 10.0.3.86
+gNB IP 10.0.3.86 hashed to position 86
+Connected to AMF 1 in 0.28 ms
+
+gNB 78 connected from IP 10.0.3.87
+gNB IP 10.0.3.87 hashed to position 87
+Connected to AMF 1 in 0.10 ms
+
+gNB 79 connected from IP 10.0.3.88
+gNB IP 10.0.3.88 hashed to position 88
+Connected to AMF 1 in 0.12 ms
+
+gNB 80 connected from IP 10.0.3.89
+gNB IP 10.0.3.89 hashed to position 89
+Connected to AMF 1 in 0.16 ms

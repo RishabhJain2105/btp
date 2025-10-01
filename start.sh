@@ -394,4 +394,4 @@ sudo helm -n ran-simulator89 upgrade --install sim5g my5GRanTester89-helm-chart/
 
 sudo helm -n ran-simulator90 upgrade --install sim5g my5GRanTester90-helm-chart/
 
-./monitor_pods.sh
+../monitor_pods.sh

@@ -38,7 +38,7 @@ for ((i=start; i<=end; i++)); do
 
     gnome-terminal --tab -- bash -c "
         sudo /usr/local/bin/kubectl -n ran-simulator$i exec deploy/sim5g-simulator -- \
-            bash -c 'cd /root/go/src/my5G-RANTester/cmd/app && ./app ue';
+            bash -c 'cd /root/go/src/my5G-RANTester/cmd/ && ./app ue';
         exec bash"
     
     sleep "$delay"

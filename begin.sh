@@ -1,39 +1,53 @@
 #!/bin/bash
+set -euo pipefail
+step() { echo -e "\e[33m==> $*\e[0m"; }
 
-cd 5gcore-sctp-loadbalancer || exit
+./dock.sh
+cd 5gcore-sctp-loadbalancer || { echo "dir missing"; exit 1; }
 
+CONFIG_FILE="Loadbalancer-helm-chart/values.yaml"
+TAG=$(cat /tmp/btp_selected_tag.txt)
+
+# Update the tag line (handles double or single quotes and spaces)
+sed -i 's/tag: *["'"'"'].*["'"'"']/tag: "'"$TAG"'"/' $CONFIG_FILE
+
+echo "Updated $CONFIG_FILE with tag: $TAG"
+
+step "Cluster"
 sudo kind create cluster --config config-3node.yml
 sudo kubectl create -f multus-daemonset.yml
 
-for ns in open5gs loadbalancer; do
-  sudo kubectl create ns "$ns"
-done
+step "Namespaces"
+sudo kubectl create ns open5gs || true
+sudo kubectl create ns loadbalancer || true
+for i in $(seq 1 90); do sudo kubectl create ns ran-simulator$i || true; done
 
-for i in {01..90}; do
-  sudo kubectl create ns "ran-simulator$(printf "%02d" "$i")"
-done
-
-sudo curl -LO https://github.com/redhat-nfvpe/koko/releases/download/v0.82/koko_0.82_linux_amd64
-sudo chmod +x koko_0.82_linux_amd64
+step "CNI"
+sudo curl -sLO https://github.com/redhat-nfvpe/koko/releases/download/v0.82/koko_0.82_linux_amd64
+chmod +x koko_0.82_linux_amd64
 sudo ./koko_0.82_linux_amd64 -d kind-worker,eth1 -d kind-worker2,eth1q
 
 sudo modprobe sctp
 sudo kubectl create -f cni-install.yml
+
+step "Open5GS"
 sudo kubectl create -f core-5g-macvlan.yml
 sudo helm -n open5gs upgrade --install core5g open5gs-helm-charts/
 sudo kubectl -n open5gs get po
 
+step "RBAC"
 sudo kubectl apply -f service-account.yaml
 sudo kubectl apply -f cluster-role.yaml
 sudo kubectl apply -f cluster-role-binding.yaml
 
+step "Loadbalancer"
 sudo helm -n loadbalancer upgrade --install lb Loadbalancer-helm-chart/
 sudo kubectl -n loadbalancer get po
 
-for i in {01..90}; do
-  ns="ran-simulator$(printf "%02d" "$i")"
-  chart="my5GRanTester${i}-helm-chart/"
-  sudo helm -n "$ns" upgrade --install sim5g "$chart"
+step "RAN sims"
+for i in $(seq 1 90); do
+  sudo helm -n ran-simulator$i upgrade --install sim5g my5GRanTester$i-helm-chart/
 done
 
-./monitor_pods.sh
+# step "Monitor"
+# ./monitor_pods.sh

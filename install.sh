@@ -29,8 +29,8 @@ sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 sudo apt-get update
 
-sudo apt-get install -y docker-ce=5:24.0.6-1~ubuntu.20.04~focal \
-  docker-ce-cli=5:24.0.6-1~ubuntu.20.04~focal \
+sudo apt-get install -y docker-ce=5:24.0.6-1~ubuntu.22.04~jammy \
+  docker-ce-cli=5:24.0.6-1~ubuntu.22.04~jammy \
   containerd.io
 
 curl -LO https://dl.k8s.io/release/v1.28.2/bin/linux/amd64/kubectl

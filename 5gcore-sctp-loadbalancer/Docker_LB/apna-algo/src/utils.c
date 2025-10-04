@@ -14,19 +14,19 @@ void execute_command(const char *cmd, char *const args[])
     pid_t pid = fork();
 
     if (pid == -1) {
-        perror("fork");
+        log_perror("fork");
         return; // don't exit entire program from helper
     } else if (pid == 0) {
         // Child process
         if (execvp(cmd, args) == -1) {
-            perror("execvp");
+            log_perror("execvp");
             _exit(EXIT_FAILURE);
         }
     } else {
         // Parent process: wait for child
         int status = 0;
         if (waitpid(pid, &status, 0) == -1) {
-            perror("waitpid");
+            log_perror("waitpid");
         }
     }
 }
@@ -39,7 +39,7 @@ int log_init(const char *filename) {
     log_file = fopen(filename, "a");
     if (!log_file)
     {
-        perror("[log_init] fopen");
+        log_perror("[log_init] fopen");
         pthread_mutex_unlock(&log_mutex);
         return -1;
     }

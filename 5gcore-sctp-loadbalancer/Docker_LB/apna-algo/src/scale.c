@@ -1,13 +1,13 @@
 #include "scale.h"
+#include "amf.h"
+#include "forward.h"
+#include "utils.h"
 
 #include <pthread.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 
-#include "amf.h"
-#include "forward.h"
-#include "utils.h"
 
 int AMF_CAPACITY = 10;
 const float HEADROOM_PERCENTAGE = 0.1f;
@@ -21,18 +21,18 @@ void scale_up_check(void) {
     pthread_mutex_lock(&amf_state_mutex);
     int active_count = get_active_amf_count();
     if (active_count == 0) {
-        printf("[scale] scale_up_check: No active AMFs, skipping scale up\n");
+        log("INFO", "[scale] scale_up_check: No active AMFs, skipping scale up\n");
         pthread_mutex_unlock(&amf_state_mutex);
         return;
     }
 
     int threshold = AMF_CAPACITY * active_count - (int)(AMF_CAPACITY * HEADROOM_PERCENTAGE);
-    printf("[scale] scale_up_check: total_conn_count=%d, threshold=%d\n", total_conn_count, threshold);
+    log("INFO", "[scale] scale_up_check: total_conn_count=%d, threshold=%d\n", total_conn_count, threshold);
 
     if (total_conn_count >= threshold) {
         for (int i = 0; i < MAX_AMFS; i++) {
             if (!amfs[i].active) {
-                printf("[scale] SCALE UP: Load (%d) exceeds threshold (%d). Deploying AMF %d...\n",
+                log("INFO", "[scale] SCALE UP: Load (%d) exceeds threshold (%d). Deploying AMF %d...\n",
                        total_conn_count, threshold, amfs[i].id);
                 amfs[i].active = 1;
                 char *cmd[] = {"kubectl", "-n", "open5gs", "scale", "deployment",
@@ -43,7 +43,7 @@ void scale_up_check(void) {
             }
         }
     } else {
-        printf("[scale] scale_up_check: Load below threshold, no scaling up needed\n");
+        log("INFO", "[scale] scale_up_check: Load below threshold, no scaling up needed\n");
     }
     pthread_mutex_unlock(&amf_state_mutex);
 }
@@ -56,7 +56,7 @@ void *descaling_thread_func(void *arg) {
         pthread_mutex_lock(&amf_state_mutex);
         int active_count = get_active_amf_count();
         if (active_count <= 1) {
-            printf("[scale] descaling_thread_func: Only %d active AMF(s), skipping scale down\n", active_count);
+            log("INFO", "[scale] descaling_thread_func: Only %d active AMF(s), skipping scale down\n", active_count);
             pthread_mutex_unlock(&amf_state_mutex);
             continue;
         }
@@ -66,7 +66,7 @@ void *descaling_thread_func(void *arg) {
             if (!old_amf->active) continue;
 
             float util = (old_amf->connections > 0) ? (float)old_amf->connections / AMF_CAPACITY : 0.0f;
-            printf("[scale] descaling_thread_func: Checking AMF %d utilization: %.2f\n", old_amf->id, util);
+            log("INFO", "[scale] descaling_thread_func: Checking AMF %d utilization: %.2f\n", old_amf->id, util);
 
             if (util < THRESHOLD_DOWN) {
                 AMF *new_amf = NULL;
@@ -82,7 +82,7 @@ void *descaling_thread_func(void *arg) {
                 }
 
                 if (new_amf) {
-                    printf("[scale] SCALE DOWN: Migrating from AMF %d to AMF %d\n", old_amf->id, new_amf->id);
+                    log("INFO", "[scale] SCALE DOWN: Migrating from AMF %d to AMF %d\n", old_amf->id, new_amf->id);
                     pthread_mutex_lock(&old_amf->lock);
                     pthread_mutex_lock(&new_amf->lock);
 
@@ -98,7 +98,7 @@ void *descaling_thread_func(void *arg) {
                             if (new_sock > 0) {
                                 *(thread_info->current_amf) = new_amf;
                                 *(thread_info->destination_socket) = new_sock;
-                                printf("[scale] Migrated connection (gNB sock %d) to new AMF socket %d\n",
+                                log("INFO", "[scale] Migrated connection (gNB sock %d) to new AMF socket %d\n",
                                        thread_info->source_socket, new_sock);
                                 close(old_sock);
                             } else {
@@ -116,14 +116,14 @@ void *descaling_thread_func(void *arg) {
                     char *cmd[] = {"kubectl", "-n", "open5gs", "scale", "deployment",
                                    (i == 1) ? "core5g-amf-2-deployment" : "core5g-amf-3-deployment",
                                    "--replicas=0", NULL};
-                    printf("[scale] Descaling: Scaling down AMF %d deployment to 0 replicas\n", old_amf->id);
+                    log("INFO", "[scale] Descaling: Scaling down AMF %d deployment to 0 replicas\n", old_amf->id);
                     execute_command("kubectl", cmd);
 
                     pthread_mutex_unlock(&new_amf->lock);
                     pthread_mutex_unlock(&old_amf->lock);
                     break;
                 } else {
-                    printf("[scale] No suitable AMF found for migration from AMF %d\n", old_amf->id);
+                    log("INFO", "[scale] No suitable AMF found for migration from AMF %d\n", old_amf->id);
                 }
             }
         }

@@ -1,4 +1,5 @@
 import os
+from pathlib import Path
 import sys
 import yaml
 
@@ -8,8 +9,8 @@ def create_file(file_path, content):
         f.write(content)
 
 def create_folder(folder_num, base_ip):
-    folder_name = f"my5GRanTester{folder_num}-helm-chart"
-    os.makedirs(folder_name, exist_ok=True)
+    folder_name = Path(os.path.dirname(__file__)).resolve().parent / "5gcore-sctp-loadbalancer" / f"my5GRanTester{folder_num}-helm-chart"
+    folder_name.mkdir(parents=True, exist_ok=True)
 
     # Chart.yaml content
     chart_yaml_content = {
@@ -23,7 +24,7 @@ def create_folder(folder_num, base_ip):
     create_file(os.path.join(folder_name, 'Chart.yaml'), yaml.dump(chart_yaml_content))
 
     # Calculate controlDataifIP
-    control_data_ip = f"10.0.3.{10 + folder_num - 1}"
+    control_data_ip = f"10.0.3.{15 + folder_num - 1}"
 
     # values.yaml content
     values_yaml_content = {
@@ -165,4 +166,6 @@ def main():
     print("Folders created successfully.")
 
 if __name__ == "__main__":
-    main()
+    print("This is not to be used...")
+    print("Run gnb instead.")
+    # main()

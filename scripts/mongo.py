@@ -1,3 +1,5 @@
+import os
+from pathlib import Path
 import sys
 import yaml
 
@@ -47,11 +49,13 @@ fi
     configmap["data"]["ue-init.sh"] = "".join(script_lines)
 
     # Dump YAML
-    file_path = "mongo-ue-init-script.yaml"
+    file_path = Path(os.path.dirname(__file__)).resolve().parent / "5gcore-sctp-loadbalancer" / "open5gs-helm-charts" / "templates" / "mongo-ue-init-script.yaml"
     with open(file_path, "w") as f:
         yaml.dump(configmap, f, sort_keys=False)
 
     print(f"{file_path} generated successfully.")
 
 if __name__ == "__main__":
-    main()
+    print("This is not to be used...")
+    print("Run mongo instead.")
+    # main()

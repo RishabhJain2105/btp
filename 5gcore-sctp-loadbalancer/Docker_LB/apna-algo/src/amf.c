@@ -1,4 +1,5 @@
 #include "amf.h"
+#include "utils.h"
 
 #include <arpa/inet.h>
 #include <netinet/sctp.h>
@@ -42,27 +43,27 @@ int get_active_amf_count(void) {
     for (int i = 0; i < MAX_AMFS; i++) {
         if (amfs[i].active) count++;
     }
-    printf("[amf] get_active_amf_count: Active AMF count = %d\n", count);
+    log("INFO", "[amf] get_active_amf_count: Active AMF count = %d\n", count);
     return count;
 }
 
 AMF *amf_get_by_index(int i) {
     if (i < 0 || i >= MAX_AMFS) {
-        printf("[amf] amf_get_by_index: Invalid index %d\n", i);
+        log("INFO", "[amf] amf_get_by_index: Invalid index %d\n", i);
         return NULL;
     }
-    printf("[amf] amf_get_by_index: Returning AMF at index %d (id=%d)\n", i, amfs[i].id);
+    log("INFO", "[amf] amf_get_by_index: Returning AMF at index %d (id=%d)\n", i, amfs[i].id);
     return &amfs[i];
 }
 
 AMF *get_next_amf_round_robin(void) {
-    printf("[amf] get_next_amf_round_robin: Choosing next active AMF using round robin\n");
+    log("INFO", "[amf] get_next_amf_round_robin: Choosing next active AMF using round robin\n");
 
     AMF *target_amf = NULL;
     pthread_mutex_lock(&round_robin_mutex);
     int active_count = get_active_amf_count();
     if (active_count == 0) {
-        printf("[amf] get_next_amf_round_robin: No active AMFs\n");
+        log("INFO", "[amf] get_next_amf_round_robin: No active AMFs\n");
         pthread_mutex_unlock(&round_robin_mutex);
         return NULL;
     }
@@ -71,7 +72,7 @@ AMF *get_next_amf_round_robin(void) {
         if (amfs[idx].active) {
             target_amf = &amfs[idx];
             round_robin_index = (idx + 1) % MAX_AMFS;
-            printf("[amf] get_next_amf_round_robin: Selected AMF index %d (id=%d, ip=%s)\n", idx, amfs[idx].id, amfs[idx].ip);
+            log("INFO", "[amf] get_next_amf_round_robin: Selected AMF index %d (id=%d, ip=%s)\n", idx, amfs[idx].id, amfs[idx].ip);
             break;
         }
     }
@@ -81,10 +82,10 @@ AMF *get_next_amf_round_robin(void) {
 }
 
 int connect_to_amf(AMF *amf) {
-    printf("[amf] connect_to_amf: Connecting to AMF id=%d ip=%s port=%d\n", amf->id, amf->ip, amf->port);
+    log("INFO", "[amf] connect_to_amf: Connecting to AMF id=%d ip=%s port=%d\n", amf->id, amf->ip, amf->port);
     int sock = socket(AF_INET, SOCK_STREAM, IPPROTO_SCTP);
     if (sock < 0) {
-        printf("[amf] connect_to_amf: Failed to create socket\n");
+        log("INFO", "[amf] connect_to_amf: Failed to create socket\n");
         return -1;
     }
     struct sockaddr_in addr;
@@ -93,10 +94,10 @@ int connect_to_amf(AMF *amf) {
     addr.sin_port = htons(amf->port);
     addr.sin_addr.s_addr = inet_addr(amf->ip);
     if (connect(sock, (struct sockaddr *)&addr, sizeof(addr)) < 0) {
-        printf("[amf] connect_to_amf: Failed to connect to %s:%d\n", amf->ip, amf->port);
+        log("INFO", "[amf] connect_to_amf: Failed to connect to %s:%d\n", amf->ip, amf->port);
         close(sock);
         return -1;
     }
-    printf("[amf] connect_to_amf: Successfully connected to %s:%d (sock=%d)\n", amf->ip, amf->port, sock);
+    log("INFO", "[amf] connect_to_amf: Successfully connected to %s:%d (sock=%d)\n", amf->ip, amf->port, sock);
     return sock;
 }

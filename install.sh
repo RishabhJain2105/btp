@@ -41,6 +41,9 @@ curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.20.0/kind-linux-amd64
 chmod +x ./kind
 sudo mv ./kind /usr/local/bin/kind
 
+curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
+./get_helm.sh
+rm get_helm.sh
 
 # Now, it ran in the first time
 
@@ -48,3 +51,6 @@ sudo mv ./kind /usr/local/bin/kind
 # Previously restart_koko was a complete failure leading to unknown state
 
 # Try this and tell me if it works for you
+
+# extra deps
+sudo apt install jq

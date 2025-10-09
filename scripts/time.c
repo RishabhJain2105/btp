@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-int main() {
+int main(int argc, char**argv) {
     FILE *file;
     int i;
     int randomValue;
@@ -11,14 +11,14 @@ int main() {
     srand(time(NULL));
 
     // Open the file for writing
-    file = fopen("time.txt", "w");
+    file = fopen("r_time.txt", "w");
     if (file == NULL) {
         printf("Error opening file!\n");
         return 1;
     }
 
     // Generate random values and write them to the file
-    for (i = 0; i < 90; i++) { // Adjust the loop count for more values
+    for (i = 0; i < atoi(argv[1]); i++) { // Adjust the loop count for more values
         randomValue = (rand() % 5) + 1; // Generate random value between 1 and 5
         fprintf(file, "%d\n", randomValue);
     }
@@ -26,7 +26,7 @@ int main() {
     // Close the file
     fclose(file);
 
-    printf("Random values written to time.txt\n");
+    printf("Random values written to r_time.txt\n");
 
     return 0;
 }

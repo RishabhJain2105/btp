@@ -549,3 +549,273 @@ data:
           ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs add_ue_with_slice {{ .Values.simulator.ue60.imsi }} {{ .Values.simulator.ue60.secKey }} {{ .Values.simulator.ue60.op }} {{ .Values.dnn }} {{ .Values.simulator.ue60.sst }} {{ .Values.simulator.ue60.sd }};
      fi
 
+     if ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs showfiltered | grep -w {{ .Values.simulator.ue61.imsi }}; then
+          echo "UE {{ .Values.simulator.ue61.imsi }} exists, proceeding to delete"
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs remove {{ .Values.simulator.ue61.imsi }}
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs add_ue_with_slice {{ .Values.simulator.ue61.imsi }} {{ .Values.simulator.ue61.secKey }} {{ .Values.simulator.ue61.op }} {{ .Values.dnn }} {{ .Values.simulator.ue61.sst }} {{ .Values.simulator.ue61.sd }};
+     else
+          echo "UE {{ .Values.simulator.ue61.imsi }} does not exist in the DB, proceeding to add it"
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs add_ue_with_slice {{ .Values.simulator.ue61.imsi }} {{ .Values.simulator.ue61.secKey }} {{ .Values.simulator.ue61.op }} {{ .Values.dnn }} {{ .Values.simulator.ue61.sst }} {{ .Values.simulator.ue61.sd }};
+     fi
+
+     if ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs showfiltered | grep -w {{ .Values.simulator.ue62.imsi }}; then
+          echo "UE {{ .Values.simulator.ue62.imsi }} exists, proceeding to delete"
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs remove {{ .Values.simulator.ue62.imsi }}
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs add_ue_with_slice {{ .Values.simulator.ue62.imsi }} {{ .Values.simulator.ue62.secKey }} {{ .Values.simulator.ue62.op }} {{ .Values.dnn }} {{ .Values.simulator.ue62.sst }} {{ .Values.simulator.ue62.sd }};
+     else
+          echo "UE {{ .Values.simulator.ue62.imsi }} does not exist in the DB, proceeding to add it"
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs add_ue_with_slice {{ .Values.simulator.ue62.imsi }} {{ .Values.simulator.ue62.secKey }} {{ .Values.simulator.ue62.op }} {{ .Values.dnn }} {{ .Values.simulator.ue62.sst }} {{ .Values.simulator.ue62.sd }};
+     fi
+
+     if ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs showfiltered | grep -w {{ .Values.simulator.ue63.imsi }}; then
+          echo "UE {{ .Values.simulator.ue63.imsi }} exists, proceeding to delete"
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs remove {{ .Values.simulator.ue63.imsi }}
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs add_ue_with_slice {{ .Values.simulator.ue63.imsi }} {{ .Values.simulator.ue63.secKey }} {{ .Values.simulator.ue63.op }} {{ .Values.dnn }} {{ .Values.simulator.ue63.sst }} {{ .Values.simulator.ue63.sd }};
+     else
+          echo "UE {{ .Values.simulator.ue63.imsi }} does not exist in the DB, proceeding to add it"
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs add_ue_with_slice {{ .Values.simulator.ue63.imsi }} {{ .Values.simulator.ue63.secKey }} {{ .Values.simulator.ue63.op }} {{ .Values.dnn }} {{ .Values.simulator.ue63.sst }} {{ .Values.simulator.ue63.sd }};
+     fi
+
+     if ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs showfiltered | grep -w {{ .Values.simulator.ue64.imsi }}; then
+          echo "UE {{ .Values.simulator.ue64.imsi }} exists, proceeding to delete"
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs remove {{ .Values.simulator.ue64.imsi }}
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs add_ue_with_slice {{ .Values.simulator.ue64.imsi }} {{ .Values.simulator.ue64.secKey }} {{ .Values.simulator.ue64.op }} {{ .Values.dnn }} {{ .Values.simulator.ue64.sst }} {{ .Values.simulator.ue64.sd }};
+     else
+          echo "UE {{ .Values.simulator.ue64.imsi }} does not exist in the DB, proceeding to add it"
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs add_ue_with_slice {{ .Values.simulator.ue64.imsi }} {{ .Values.simulator.ue64.secKey }} {{ .Values.simulator.ue64.op }} {{ .Values.dnn }} {{ .Values.simulator.ue64.sst }} {{ .Values.simulator.ue64.sd }};
+     fi
+
+     if ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs showfiltered | grep -w {{ .Values.simulator.ue65.imsi }}; then
+          echo "UE {{ .Values.simulator.ue65.imsi }} exists, proceeding to delete"
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs remove {{ .Values.simulator.ue65.imsi }}
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs add_ue_with_slice {{ .Values.simulator.ue65.imsi }} {{ .Values.simulator.ue65.secKey }} {{ .Values.simulator.ue65.op }} {{ .Values.dnn }} {{ .Values.simulator.ue65.sst }} {{ .Values.simulator.ue65.sd }};
+     else
+          echo "UE {{ .Values.simulator.ue65.imsi }} does not exist in the DB, proceeding to add it"
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs add_ue_with_slice {{ .Values.simulator.ue65.imsi }} {{ .Values.simulator.ue65.secKey }} {{ .Values.simulator.ue65.op }} {{ .Values.dnn }} {{ .Values.simulator.ue65.sst }} {{ .Values.simulator.ue65.sd }};
+     fi
+
+     if ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs showfiltered | grep -w {{ .Values.simulator.ue66.imsi }}; then
+          echo "UE {{ .Values.simulator.ue66.imsi }} exists, proceeding to delete"
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs remove {{ .Values.simulator.ue66.imsi }}
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs add_ue_with_slice {{ .Values.simulator.ue66.imsi }} {{ .Values.simulator.ue66.secKey }} {{ .Values.simulator.ue66.op }} {{ .Values.dnn }} {{ .Values.simulator.ue66.sst }} {{ .Values.simulator.ue66.sd }};
+     else
+          echo "UE {{ .Values.simulator.ue66.imsi }} does not exist in the DB, proceeding to add it"
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs add_ue_with_slice {{ .Values.simulator.ue66.imsi }} {{ .Values.simulator.ue66.secKey }} {{ .Values.simulator.ue66.op }} {{ .Values.dnn }} {{ .Values.simulator.ue66.sst }} {{ .Values.simulator.ue66.sd }};
+     fi
+
+     if ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs showfiltered | grep -w {{ .Values.simulator.ue67.imsi }}; then
+          echo "UE {{ .Values.simulator.ue67.imsi }} exists, proceeding to delete"
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs remove {{ .Values.simulator.ue67.imsi }}
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs add_ue_with_slice {{ .Values.simulator.ue67.imsi }} {{ .Values.simulator.ue67.secKey }} {{ .Values.simulator.ue67.op }} {{ .Values.dnn }} {{ .Values.simulator.ue67.sst }} {{ .Values.simulator.ue67.sd }};
+     else
+          echo "UE {{ .Values.simulator.ue67.imsi }} does not exist in the DB, proceeding to add it"
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs add_ue_with_slice {{ .Values.simulator.ue67.imsi }} {{ .Values.simulator.ue67.secKey }} {{ .Values.simulator.ue67.op }} {{ .Values.dnn }} {{ .Values.simulator.ue67.sst }} {{ .Values.simulator.ue67.sd }};
+     fi
+
+     if ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs showfiltered | grep -w {{ .Values.simulator.ue68.imsi }}; then
+          echo "UE {{ .Values.simulator.ue68.imsi }} exists, proceeding to delete"
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs remove {{ .Values.simulator.ue68.imsi }}
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs add_ue_with_slice {{ .Values.simulator.ue68.imsi }} {{ .Values.simulator.ue68.secKey }} {{ .Values.simulator.ue68.op }} {{ .Values.dnn }} {{ .Values.simulator.ue68.sst }} {{ .Values.simulator.ue68.sd }};
+     else
+          echo "UE {{ .Values.simulator.ue68.imsi }} does not exist in the DB, proceeding to add it"
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs add_ue_with_slice {{ .Values.simulator.ue68.imsi }} {{ .Values.simulator.ue68.secKey }} {{ .Values.simulator.ue68.op }} {{ .Values.dnn }} {{ .Values.simulator.ue68.sst }} {{ .Values.simulator.ue68.sd }};
+     fi
+
+     if ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs showfiltered | grep -w {{ .Values.simulator.ue69.imsi }}; then
+          echo "UE {{ .Values.simulator.ue69.imsi }} exists, proceeding to delete"
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs remove {{ .Values.simulator.ue69.imsi }}
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs add_ue_with_slice {{ .Values.simulator.ue69.imsi }} {{ .Values.simulator.ue69.secKey }} {{ .Values.simulator.ue69.op }} {{ .Values.dnn }} {{ .Values.simulator.ue69.sst }} {{ .Values.simulator.ue69.sd }};
+     else
+          echo "UE {{ .Values.simulator.ue69.imsi }} does not exist in the DB, proceeding to add it"
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs add_ue_with_slice {{ .Values.simulator.ue69.imsi }} {{ .Values.simulator.ue69.secKey }} {{ .Values.simulator.ue69.op }} {{ .Values.dnn }} {{ .Values.simulator.ue69.sst }} {{ .Values.simulator.ue69.sd }};
+     fi
+
+     if ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs showfiltered | grep -w {{ .Values.simulator.ue70.imsi }}; then
+          echo "UE {{ .Values.simulator.ue70.imsi }} exists, proceeding to delete"
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs remove {{ .Values.simulator.ue70.imsi }}
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs add_ue_with_slice {{ .Values.simulator.ue70.imsi }} {{ .Values.simulator.ue70.secKey }} {{ .Values.simulator.ue70.op }} {{ .Values.dnn }} {{ .Values.simulator.ue70.sst }} {{ .Values.simulator.ue70.sd }};
+     else
+          echo "UE {{ .Values.simulator.ue70.imsi }} does not exist in the DB, proceeding to add it"
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs add_ue_with_slice {{ .Values.simulator.ue70.imsi }} {{ .Values.simulator.ue70.secKey }} {{ .Values.simulator.ue70.op }} {{ .Values.dnn }} {{ .Values.simulator.ue70.sst }} {{ .Values.simulator.ue70.sd }};
+     fi
+
+     if ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs showfiltered | grep -w {{ .Values.simulator.ue71.imsi }}; then
+          echo "UE {{ .Values.simulator.ue71.imsi }} exists, proceeding to delete"
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs remove {{ .Values.simulator.ue71.imsi }}
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs add_ue_with_slice {{ .Values.simulator.ue71.imsi }} {{ .Values.simulator.ue71.secKey }} {{ .Values.simulator.ue71.op }} {{ .Values.dnn }} {{ .Values.simulator.ue71.sst }} {{ .Values.simulator.ue71.sd }};
+     else
+          echo "UE {{ .Values.simulator.ue71.imsi }} does not exist in the DB, proceeding to add it"
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs add_ue_with_slice {{ .Values.simulator.ue71.imsi }} {{ .Values.simulator.ue71.secKey }} {{ .Values.simulator.ue71.op }} {{ .Values.dnn }} {{ .Values.simulator.ue71.sst }} {{ .Values.simulator.ue71.sd }};
+     fi
+
+     if ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs showfiltered | grep -w {{ .Values.simulator.ue72.imsi }}; then
+          echo "UE {{ .Values.simulator.ue72.imsi }} exists, proceeding to delete"
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs remove {{ .Values.simulator.ue72.imsi }}
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs add_ue_with_slice {{ .Values.simulator.ue72.imsi }} {{ .Values.simulator.ue72.secKey }} {{ .Values.simulator.ue72.op }} {{ .Values.dnn }} {{ .Values.simulator.ue72.sst }} {{ .Values.simulator.ue72.sd }};
+     else
+          echo "UE {{ .Values.simulator.ue72.imsi }} does not exist in the DB, proceeding to add it"
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs add_ue_with_slice {{ .Values.simulator.ue72.imsi }} {{ .Values.simulator.ue72.secKey }} {{ .Values.simulator.ue72.op }} {{ .Values.dnn }} {{ .Values.simulator.ue72.sst }} {{ .Values.simulator.ue72.sd }};
+     fi
+
+     if ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs showfiltered | grep -w {{ .Values.simulator.ue73.imsi }}; then
+          echo "UE {{ .Values.simulator.ue73.imsi }} exists, proceeding to delete"
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs remove {{ .Values.simulator.ue73.imsi }}
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs add_ue_with_slice {{ .Values.simulator.ue73.imsi }} {{ .Values.simulator.ue73.secKey }} {{ .Values.simulator.ue73.op }} {{ .Values.dnn }} {{ .Values.simulator.ue73.sst }} {{ .Values.simulator.ue73.sd }};
+     else
+          echo "UE {{ .Values.simulator.ue73.imsi }} does not exist in the DB, proceeding to add it"
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs add_ue_with_slice {{ .Values.simulator.ue73.imsi }} {{ .Values.simulator.ue73.secKey }} {{ .Values.simulator.ue73.op }} {{ .Values.dnn }} {{ .Values.simulator.ue73.sst }} {{ .Values.simulator.ue73.sd }};
+     fi
+
+     if ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs showfiltered | grep -w {{ .Values.simulator.ue74.imsi }}; then
+          echo "UE {{ .Values.simulator.ue74.imsi }} exists, proceeding to delete"
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs remove {{ .Values.simulator.ue74.imsi }}
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs add_ue_with_slice {{ .Values.simulator.ue74.imsi }} {{ .Values.simulator.ue74.secKey }} {{ .Values.simulator.ue74.op }} {{ .Values.dnn }} {{ .Values.simulator.ue74.sst }} {{ .Values.simulator.ue74.sd }};
+     else
+          echo "UE {{ .Values.simulator.ue74.imsi }} does not exist in the DB, proceeding to add it"
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs add_ue_with_slice {{ .Values.simulator.ue74.imsi }} {{ .Values.simulator.ue74.secKey }} {{ .Values.simulator.ue74.op }} {{ .Values.dnn }} {{ .Values.simulator.ue74.sst }} {{ .Values.simulator.ue74.sd }};
+     fi
+
+     if ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs showfiltered | grep -w {{ .Values.simulator.ue75.imsi }}; then
+          echo "UE {{ .Values.simulator.ue75.imsi }} exists, proceeding to delete"
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs remove {{ .Values.simulator.ue75.imsi }}
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs add_ue_with_slice {{ .Values.simulator.ue75.imsi }} {{ .Values.simulator.ue75.secKey }} {{ .Values.simulator.ue75.op }} {{ .Values.dnn }} {{ .Values.simulator.ue75.sst }} {{ .Values.simulator.ue75.sd }};
+     else
+          echo "UE {{ .Values.simulator.ue75.imsi }} does not exist in the DB, proceeding to add it"
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs add_ue_with_slice {{ .Values.simulator.ue75.imsi }} {{ .Values.simulator.ue75.secKey }} {{ .Values.simulator.ue75.op }} {{ .Values.dnn }} {{ .Values.simulator.ue75.sst }} {{ .Values.simulator.ue75.sd }};
+     fi
+
+     if ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs showfiltered | grep -w {{ .Values.simulator.ue76.imsi }}; then
+          echo "UE {{ .Values.simulator.ue76.imsi }} exists, proceeding to delete"
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs remove {{ .Values.simulator.ue76.imsi }}
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs add_ue_with_slice {{ .Values.simulator.ue76.imsi }} {{ .Values.simulator.ue76.secKey }} {{ .Values.simulator.ue76.op }} {{ .Values.dnn }} {{ .Values.simulator.ue76.sst }} {{ .Values.simulator.ue76.sd }};
+     else
+          echo "UE {{ .Values.simulator.ue76.imsi }} does not exist in the DB, proceeding to add it"
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs add_ue_with_slice {{ .Values.simulator.ue76.imsi }} {{ .Values.simulator.ue76.secKey }} {{ .Values.simulator.ue76.op }} {{ .Values.dnn }} {{ .Values.simulator.ue76.sst }} {{ .Values.simulator.ue76.sd }};
+     fi
+
+     if ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs showfiltered | grep -w {{ .Values.simulator.ue77.imsi }}; then
+          echo "UE {{ .Values.simulator.ue77.imsi }} exists, proceeding to delete"
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs remove {{ .Values.simulator.ue77.imsi }}
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs add_ue_with_slice {{ .Values.simulator.ue77.imsi }} {{ .Values.simulator.ue77.secKey }} {{ .Values.simulator.ue77.op }} {{ .Values.dnn }} {{ .Values.simulator.ue77.sst }} {{ .Values.simulator.ue77.sd }};
+     else
+          echo "UE {{ .Values.simulator.ue77.imsi }} does not exist in the DB, proceeding to add it"
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs add_ue_with_slice {{ .Values.simulator.ue77.imsi }} {{ .Values.simulator.ue77.secKey }} {{ .Values.simulator.ue77.op }} {{ .Values.dnn }} {{ .Values.simulator.ue77.sst }} {{ .Values.simulator.ue77.sd }};
+     fi
+
+     if ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs showfiltered | grep -w {{ .Values.simulator.ue78.imsi }}; then
+          echo "UE {{ .Values.simulator.ue78.imsi }} exists, proceeding to delete"
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs remove {{ .Values.simulator.ue78.imsi }}
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs add_ue_with_slice {{ .Values.simulator.ue78.imsi }} {{ .Values.simulator.ue78.secKey }} {{ .Values.simulator.ue78.op }} {{ .Values.dnn }} {{ .Values.simulator.ue78.sst }} {{ .Values.simulator.ue78.sd }};
+     else
+          echo "UE {{ .Values.simulator.ue78.imsi }} does not exist in the DB, proceeding to add it"
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs add_ue_with_slice {{ .Values.simulator.ue78.imsi }} {{ .Values.simulator.ue78.secKey }} {{ .Values.simulator.ue78.op }} {{ .Values.dnn }} {{ .Values.simulator.ue78.sst }} {{ .Values.simulator.ue78.sd }};
+     fi
+
+     if ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs showfiltered | grep -w {{ .Values.simulator.ue79.imsi }}; then
+          echo "UE {{ .Values.simulator.ue79.imsi }} exists, proceeding to delete"
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs remove {{ .Values.simulator.ue79.imsi }}
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs add_ue_with_slice {{ .Values.simulator.ue79.imsi }} {{ .Values.simulator.ue79.secKey }} {{ .Values.simulator.ue79.op }} {{ .Values.dnn }} {{ .Values.simulator.ue79.sst }} {{ .Values.simulator.ue79.sd }};
+     else
+          echo "UE {{ .Values.simulator.ue79.imsi }} does not exist in the DB, proceeding to add it"
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs add_ue_with_slice {{ .Values.simulator.ue79.imsi }} {{ .Values.simulator.ue79.secKey }} {{ .Values.simulator.ue79.op }} {{ .Values.dnn }} {{ .Values.simulator.ue79.sst }} {{ .Values.simulator.ue79.sd }};
+     fi
+
+     if ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs showfiltered | grep -w {{ .Values.simulator.ue80.imsi }}; then
+          echo "UE {{ .Values.simulator.ue80.imsi }} exists, proceeding to delete"
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs remove {{ .Values.simulator.ue80.imsi }}
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs add_ue_with_slice {{ .Values.simulator.ue80.imsi }} {{ .Values.simulator.ue80.secKey }} {{ .Values.simulator.ue80.op }} {{ .Values.dnn }} {{ .Values.simulator.ue80.sst }} {{ .Values.simulator.ue80.sd }};
+     else
+          echo "UE {{ .Values.simulator.ue80.imsi }} does not exist in the DB, proceeding to add it"
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs add_ue_with_slice {{ .Values.simulator.ue80.imsi }} {{ .Values.simulator.ue80.secKey }} {{ .Values.simulator.ue80.op }} {{ .Values.dnn }} {{ .Values.simulator.ue80.sst }} {{ .Values.simulator.ue80.sd }};
+     fi
+
+     if ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs showfiltered | grep -w {{ .Values.simulator.ue81.imsi }}; then
+          echo "UE {{ .Values.simulator.ue81.imsi }} exists, proceeding to delete"
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs remove {{ .Values.simulator.ue81.imsi }}
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs add_ue_with_slice {{ .Values.simulator.ue81.imsi }} {{ .Values.simulator.ue81.secKey }} {{ .Values.simulator.ue81.op }} {{ .Values.dnn }} {{ .Values.simulator.ue81.sst }} {{ .Values.simulator.ue81.sd }};
+     else
+          echo "UE {{ .Values.simulator.ue81.imsi }} does not exist in the DB, proceeding to add it"
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs add_ue_with_slice {{ .Values.simulator.ue81.imsi }} {{ .Values.simulator.ue81.secKey }} {{ .Values.simulator.ue81.op }} {{ .Values.dnn }} {{ .Values.simulator.ue81.sst }} {{ .Values.simulator.ue81.sd }};
+     fi
+
+     if ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs showfiltered | grep -w {{ .Values.simulator.ue82.imsi }}; then
+          echo "UE {{ .Values.simulator.ue82.imsi }} exists, proceeding to delete"
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs remove {{ .Values.simulator.ue82.imsi }}
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs add_ue_with_slice {{ .Values.simulator.ue82.imsi }} {{ .Values.simulator.ue82.secKey }} {{ .Values.simulator.ue82.op }} {{ .Values.dnn }} {{ .Values.simulator.ue82.sst }} {{ .Values.simulator.ue82.sd }};
+     else
+          echo "UE {{ .Values.simulator.ue82.imsi }} does not exist in the DB, proceeding to add it"
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs add_ue_with_slice {{ .Values.simulator.ue82.imsi }} {{ .Values.simulator.ue82.secKey }} {{ .Values.simulator.ue82.op }} {{ .Values.dnn }} {{ .Values.simulator.ue82.sst }} {{ .Values.simulator.ue82.sd }};
+     fi
+
+     if ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs showfiltered | grep -w {{ .Values.simulator.ue83.imsi }}; then
+          echo "UE {{ .Values.simulator.ue83.imsi }} exists, proceeding to delete"
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs remove {{ .Values.simulator.ue83.imsi }}
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs add_ue_with_slice {{ .Values.simulator.ue83.imsi }} {{ .Values.simulator.ue83.secKey }} {{ .Values.simulator.ue83.op }} {{ .Values.dnn }} {{ .Values.simulator.ue83.sst }} {{ .Values.simulator.ue83.sd }};
+     else
+          echo "UE {{ .Values.simulator.ue83.imsi }} does not exist in the DB, proceeding to add it"
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs add_ue_with_slice {{ .Values.simulator.ue83.imsi }} {{ .Values.simulator.ue83.secKey }} {{ .Values.simulator.ue83.op }} {{ .Values.dnn }} {{ .Values.simulator.ue83.sst }} {{ .Values.simulator.ue83.sd }};
+     fi
+
+     if ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs showfiltered | grep -w {{ .Values.simulator.ue84.imsi }}; then
+          echo "UE {{ .Values.simulator.ue84.imsi }} exists, proceeding to delete"
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs remove {{ .Values.simulator.ue84.imsi }}
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs add_ue_with_slice {{ .Values.simulator.ue84.imsi }} {{ .Values.simulator.ue84.secKey }} {{ .Values.simulator.ue84.op }} {{ .Values.dnn }} {{ .Values.simulator.ue84.sst }} {{ .Values.simulator.ue84.sd }};
+     else
+          echo "UE {{ .Values.simulator.ue84.imsi }} does not exist in the DB, proceeding to add it"
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs add_ue_with_slice {{ .Values.simulator.ue84.imsi }} {{ .Values.simulator.ue84.secKey }} {{ .Values.simulator.ue84.op }} {{ .Values.dnn }} {{ .Values.simulator.ue84.sst }} {{ .Values.simulator.ue84.sd }};
+     fi
+
+     if ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs showfiltered | grep -w {{ .Values.simulator.ue85.imsi }}; then
+          echo "UE {{ .Values.simulator.ue85.imsi }} exists, proceeding to delete"
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs remove {{ .Values.simulator.ue85.imsi }}
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs add_ue_with_slice {{ .Values.simulator.ue85.imsi }} {{ .Values.simulator.ue85.secKey }} {{ .Values.simulator.ue85.op }} {{ .Values.dnn }} {{ .Values.simulator.ue85.sst }} {{ .Values.simulator.ue85.sd }};
+     else
+          echo "UE {{ .Values.simulator.ue85.imsi }} does not exist in the DB, proceeding to add it"
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs add_ue_with_slice {{ .Values.simulator.ue85.imsi }} {{ .Values.simulator.ue85.secKey }} {{ .Values.simulator.ue85.op }} {{ .Values.dnn }} {{ .Values.simulator.ue85.sst }} {{ .Values.simulator.ue85.sd }};
+     fi
+
+     if ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs showfiltered | grep -w {{ .Values.simulator.ue86.imsi }}; then
+          echo "UE {{ .Values.simulator.ue86.imsi }} exists, proceeding to delete"
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs remove {{ .Values.simulator.ue86.imsi }}
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs add_ue_with_slice {{ .Values.simulator.ue86.imsi }} {{ .Values.simulator.ue86.secKey }} {{ .Values.simulator.ue86.op }} {{ .Values.dnn }} {{ .Values.simulator.ue86.sst }} {{ .Values.simulator.ue86.sd }};
+     else
+          echo "UE {{ .Values.simulator.ue86.imsi }} does not exist in the DB, proceeding to add it"
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs add_ue_with_slice {{ .Values.simulator.ue86.imsi }} {{ .Values.simulator.ue86.secKey }} {{ .Values.simulator.ue86.op }} {{ .Values.dnn }} {{ .Values.simulator.ue86.sst }} {{ .Values.simulator.ue86.sd }};
+     fi
+
+     if ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs showfiltered | grep -w {{ .Values.simulator.ue87.imsi }}; then
+          echo "UE {{ .Values.simulator.ue87.imsi }} exists, proceeding to delete"
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs remove {{ .Values.simulator.ue87.imsi }}
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs add_ue_with_slice {{ .Values.simulator.ue87.imsi }} {{ .Values.simulator.ue87.secKey }} {{ .Values.simulator.ue87.op }} {{ .Values.dnn }} {{ .Values.simulator.ue87.sst }} {{ .Values.simulator.ue87.sd }};
+     else
+          echo "UE {{ .Values.simulator.ue87.imsi }} does not exist in the DB, proceeding to add it"
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs add_ue_with_slice {{ .Values.simulator.ue87.imsi }} {{ .Values.simulator.ue87.secKey }} {{ .Values.simulator.ue87.op }} {{ .Values.dnn }} {{ .Values.simulator.ue87.sst }} {{ .Values.simulator.ue87.sd }};
+     fi
+
+     if ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs showfiltered | grep -w {{ .Values.simulator.ue88.imsi }}; then
+          echo "UE {{ .Values.simulator.ue88.imsi }} exists, proceeding to delete"
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs remove {{ .Values.simulator.ue88.imsi }}
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs add_ue_with_slice {{ .Values.simulator.ue88.imsi }} {{ .Values.simulator.ue88.secKey }} {{ .Values.simulator.ue88.op }} {{ .Values.dnn }} {{ .Values.simulator.ue88.sst }} {{ .Values.simulator.ue88.sd }};
+     else
+          echo "UE {{ .Values.simulator.ue88.imsi }} does not exist in the DB, proceeding to add it"
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs add_ue_with_slice {{ .Values.simulator.ue88.imsi }} {{ .Values.simulator.ue88.secKey }} {{ .Values.simulator.ue88.op }} {{ .Values.dnn }} {{ .Values.simulator.ue88.sst }} {{ .Values.simulator.ue88.sd }};
+     fi
+
+     if ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs showfiltered | grep -w {{ .Values.simulator.ue89.imsi }}; then
+          echo "UE {{ .Values.simulator.ue89.imsi }} exists, proceeding to delete"
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs remove {{ .Values.simulator.ue89.imsi }}
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs add_ue_with_slice {{ .Values.simulator.ue89.imsi }} {{ .Values.simulator.ue89.secKey }} {{ .Values.simulator.ue89.op }} {{ .Values.dnn }} {{ .Values.simulator.ue89.sst }} {{ .Values.simulator.ue89.sd }};
+     else
+          echo "UE {{ .Values.simulator.ue89.imsi }} does not exist in the DB, proceeding to add it"
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs add_ue_with_slice {{ .Values.simulator.ue89.imsi }} {{ .Values.simulator.ue89.secKey }} {{ .Values.simulator.ue89.op }} {{ .Values.dnn }} {{ .Values.simulator.ue89.sst }} {{ .Values.simulator.ue89.sd }};
+     fi
+
+     if ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs showfiltered | grep -w {{ .Values.simulator.ue90.imsi }}; then
+          echo "UE {{ .Values.simulator.ue90.imsi }} exists, proceeding to delete"
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs remove {{ .Values.simulator.ue90.imsi }}
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs add_ue_with_slice {{ .Values.simulator.ue90.imsi }} {{ .Values.simulator.ue90.secKey }} {{ .Values.simulator.ue90.op }} {{ .Values.dnn }} {{ .Values.simulator.ue90.sst }} {{ .Values.simulator.ue90.sd }};
+     else
+          echo "UE {{ .Values.simulator.ue90.imsi }} does not exist in the DB, proceeding to add it"
+          ./open5gs-dbctl --db_uri=mongodb://{{ .Release.Name }}-mongodb-svc/open5gs add_ue_with_slice {{ .Values.simulator.ue90.imsi }} {{ .Values.simulator.ue90.secKey }} {{ .Values.simulator.ue90.op }} {{ .Values.dnn }} {{ .Values.simulator.ue90.sst }} {{ .Values.simulator.ue90.sd }};
+     fi
+

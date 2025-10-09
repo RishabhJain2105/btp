@@ -1,5 +1,5 @@
-python3 scripts/addue.py $1
-python3 scripts/time_setter.py $1
-python3 scripts/mongo.py $1
-python3 scripts/gnb.py $1
-python3 scripts/update_macvlan.py $1
+gcc scripts/addue.c -o scripts/addue && ./scripts/addue $1
+# gcc scripts/time.c -o scripts/time && ./scripts/time $1
+gcc scripts/mongo.c -o scripts/mongo && ./scripts/mongo $1
+gcc scripts/gnb.c -o scripts/gnb && ./scripts/gnb $1
+gcc scripts/macvlan.c -o scripts/macvlan && ./scripts/macvlan $1

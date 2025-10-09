@@ -42,7 +42,6 @@ if [ "$(docker images -q $IMAGE_NAME:$TAG)" != "" ]; then
       ;;
     *)
       echo "Exiting without rebuilding."
-      echo "$TAG" > /tmp/btp_selected_tag.txt
       exit 0
       ;;
   esac
@@ -56,4 +55,9 @@ echo "Tagged image as $IMAGE_NAME:$TAG"
 sudo docker push $IMAGE_NAME:$TAG
 echo "Pushed image $IMAGE_NAME:$TAG to Docker Hub"
 
-echo "$TAG" > /tmp/btp_selected_tag.txt
+CONFIG_FILE="5gcore-sctp-loadbalancer/Loadbalancer-helm-chart/values.yaml"
+
+# Update the tag line (handles double or single quotes and spaces)
+sed -i 's/tag: *["'"'"'].*["'"'"']/tag: "'"$TAG"'"/' $CONFIG_FILE
+
+echo "Updated $CONFIG_FILE with tag: $TAG"

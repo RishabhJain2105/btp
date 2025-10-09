@@ -1,18 +1,18 @@
 #include "scale.h"
-#include "amf.h"
-#include "forward.h"
-#include "utils.h"
 
 #include <pthread.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 
+#include "amf.h"
+#include "forward.h"
+#include "utils.h"
 
 int AMF_CAPACITY = 10;
-const float HEADROOM_PERCENTAGE = 0.1f;
-const float THRESHOLD_DOWN = 0.2f;
-const float THRESHOLD_UP = 0.5f;
+const float HEADROOM_PERCENTAGE = 0.16f;
+const float THRESHOLD_DOWN = (1 - HEADROOM_PERCENTAGE) / 6;
+const float THRESHOLD_UP = (1 - HEADROOM_PERCENTAGE) / 2;
 
 pthread_mutex_t amf_state_mutex = PTHREAD_MUTEX_INITIALIZER;
 int total_conn_count = 0;
@@ -26,14 +26,14 @@ void scale_up_check(void) {
         return;
     }
 
-    int threshold = AMF_CAPACITY * active_count - (int)(AMF_CAPACITY * HEADROOM_PERCENTAGE);
+    int threshold = AMF_CAPACITY * (active_count - HEADROOM_PERCENTAGE);
     log("INFO", "[scale] scale_up_check: total_conn_count=%d, threshold=%d\n", total_conn_count, threshold);
 
     if (total_conn_count >= threshold) {
         for (int i = 0; i < MAX_AMFS; i++) {
             if (!amfs[i].active) {
                 log("INFO", "[scale] SCALE UP: Load (%d) exceeds threshold (%d). Deploying AMF %d...\n",
-                       total_conn_count, threshold, amfs[i].id);
+                    total_conn_count, threshold, amfs[i].id);
                 amfs[i].active = 1;
                 char *cmd[] = {"kubectl", "-n", "open5gs", "scale", "deployment",
                                (i == 1) ? "core5g-amf-2-deployment" : "core5g-amf-3-deployment",
@@ -99,7 +99,7 @@ void *descaling_thread_func(void *arg) {
                                 *(thread_info->current_amf) = new_amf;
                                 *(thread_info->destination_socket) = new_sock;
                                 log("INFO", "[scale] Migrated connection (gNB sock %d) to new AMF socket %d\n",
-                                       thread_info->source_socket, new_sock);
+                                    thread_info->source_socket, new_sock);
                                 close(old_sock);
                             } else {
                                 fprintf(stderr, "[scale] Migration failed for gNB sock %d: could not connect to new AMF.\n",

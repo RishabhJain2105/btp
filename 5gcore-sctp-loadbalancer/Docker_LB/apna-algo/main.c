@@ -99,7 +99,6 @@ int main(int argc, char *argv[]) {
         log("INFO", "[main] Accepted new GNB connection from %s:%d\n", inet_ntoa(gnb_addr.sin_addr), ntohs(gnb_addr.sin_port)); 
 
         scale_up_check();
-        log("INFO", "[main] Scale up check completed.\n");
 
         pthread_t gnb_thread;
         if (pthread_create(&gnb_thread, NULL, handle_gnb_connection, gnb_sock) != 0) {

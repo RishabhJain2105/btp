@@ -18,16 +18,16 @@ void create_file(const char *file_path, const char *content) {
 
 // Function to create a folder with the specified content
 void create_folder(int folder_num, const char *base_ip) {
-    char folder_name[50];
-    char folder_path[100];
+    char folder_name[200];
+    char folder_path[300];
 
     // Create folder name
-    snprintf(folder_name, sizeof(folder_name), "my5GRanTester%d-helm-chart", folder_num);
+    snprintf(folder_name, sizeof(folder_name), "5gcore-sctp-loadbalancer/my5GRanTester%d-helm-chart", folder_num);
 
     // Create the main folder
     if (mkdir(folder_name, 0777) != 0) {
-        perror("Error creating main folder");
-        exit(EXIT_FAILURE);
+        // perror("Error creating main folder");
+        // exit(EXIT_FAILURE);
     }
 
     // Create chart.yaml content
@@ -46,7 +46,7 @@ void create_folder(int folder_num, const char *base_ip) {
     snprintf(controlDataifIP, sizeof(controlDataifIP), "10.0.3.%d", 10 + folder_num - 1);
 
     // Create values.yaml content with updated IP
-    char values_yaml_content[500];
+    char values_yaml_content[5000];
     snprintf(values_yaml_content, sizeof(values_yaml_content), 
         "image:\n"
         "  repository: wriddhiraaj/my5g-ran-tester\n"
@@ -72,8 +72,8 @@ void create_folder(int folder_num, const char *base_ip) {
     // Create templates folder
     snprintf(folder_path, sizeof(folder_path), "%s/templates", folder_name);
     if (mkdir(folder_path, 0777) != 0) {
-        perror("Error creating templates folder");
-        exit(EXIT_FAILURE);
+        // perror("Error creating templates folder");
+        // exit(EXIT_FAILURE);
     }
 
     // Create rantester-configmap.yaml content

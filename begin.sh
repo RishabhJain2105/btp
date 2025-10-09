@@ -12,17 +12,11 @@ if ! [[ "$NUM_SIMS" =~ ^[0-9]+$ ]] || [[ "$NUM_SIMS" -le 0 ]]; then
   echo "Error: Argument must be a positive integer."
   exit 1
 fi
-# ./setup.sh $NUM_SIMS
-./dock.sh
+
+./setup.sh $NUM_SIMS
+
+# ./dock.sh
 cd 5gcore-sctp-loadbalancer || { echo "dir missing"; exit 1; }
-
-CONFIG_FILE="Loadbalancer-helm-chart/values.yaml"
-TAG=$(cat /tmp/btp_selected_tag.txt)
-
-# Update the tag line (handles double or single quotes and spaces)
-sed -i 's/tag: *["'"'"'].*["'"'"']/tag: "'"$TAG"'"/' $CONFIG_FILE
-
-echo "Updated $CONFIG_FILE with tag: $TAG"
 
 step "Cluster"
 sudo kind create cluster --config config-3node.yml
